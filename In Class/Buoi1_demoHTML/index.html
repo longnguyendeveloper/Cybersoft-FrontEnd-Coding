@@ -1,0 +1,104 @@
+<!-- khai báo phiên bản html(5) -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="description" content="Demo HTML">
+    <title>Demo HTML - Title</title>
+</head>
+
+<body>
+    <!-- style: thuộc tính của html -->
+    <!-- color: thuộc tính của css -->
+    <!-- px: đơn vị cố định -->
+    <!-- %: đơn vị tương đối, lấy kích thước của thẻ cha gần nhất-->
+    <h1 style="background-color: red; color: white; text-align: center;">THE COFFEE HOUSE</h1>
+    <hr style="height: 5px; width: 50%;" noshade>
+
+    <!-- liên kết ngoại -->
+    <a href="http://127.0.0.1:5500/index.html"> đi tới trang the coffee house</a>
+    <!-- liên kết nội -->
+    <a href="#teamenu">Đi tới trang tea menu</a>
+
+    <hr style="height: 5px; width: 70%;" noshade>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est a ad dolorem, quia dolore soluta, architecto sequi
+        libero quasi dolores impedit perferendis et temporibus dignissimos facilis sit laudantium alias quod consectetur
+        accusamus consequatur doloribus debitis aut. ipsum dolor sit amet consectetur adipisicing elit. <b>Incidunt,
+            reiciendis vero voluptatum delectus beatae asperiores exercitationem modi sit sint doloremque aspernatur aut
+            vitae quisquam voluptatibus provident quidem inventore temporibus esse.</b> <i>fugiat laboriosam temporibus
+            dolores quae officiis ratione pariatur iusto labore quod tenetur molestiae repellat,</i> <b><i>dolor eos
+                aspernatur, natus magnam.</i></b> voluptate perspiciatis deserunt fugiat vel at eum recusandae,<br>
+        minus facere cupiditate voluptatum dignissimos odit perferendis fugit, atque velit aspernatur suscipit non? Vel
+        ducimus molestias deleniti! Aspernatur labore hic minus voluptates aperiam natus incidunt nulla alias minima
+        similique facilis, officia ipsam possimus voluptatibus placeat vitae blanditiis facere expedita sapiente autem
+        magnam illo iste quibusdam. Unde animi error est, consequuntur ullam voluptates qui illo necessitatibus!</p>
+
+    <hr style="height: 5px; width: 70%;" noshade>
+
+    <!-- Danh sách không có thứ tự (underlist) -->
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+
+    <!-- Danh sách có thứ tự -->
+    <ol type="I">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ol>
+
+    <!-- div: thẻ dùng để chia vùng, gom nhóm của website -->
+    <div id="teamenu">
+        <h2>Tea Menu</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit ut nostrum ab, quasi temporibus adipisci
+            impedit quisquam nulla voluptatibus. Maxime.</p>
+    </div>
+
+    <!-- đường dẫn tương đối -->
+    <!-- ./: vị trí hiện tại của file (index.html) -->
+    <!-- ../: vị trí cấp folder cha của file hiện tại (index.html) -->
+    <!-- alt: giúp người dùng khiếm thị, đọc mô tả image -->
+    <img src="./image/greentea.jpg" alt="greentea">
+    <img src="../" alt="">
+
+    <table border="1" width="800px" heigh="300px" align="center">
+        <tr>
+            <th colspan="2" style="background-color: red;">Name</th>
+            <th>Type</th>
+            <th>Price</th>
+        </tr>
+
+        <tr>
+            <td rowspan="4">Traditional</td>
+            <td rowspan="2s">Vietnameses coffee</td>
+            <td>Hot</td>
+            <td>60.000</td>
+        </tr>
+
+        <tr>
+            <td>Cold</td>
+            <td>28.000</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2">milk coffee</td>
+            <td style="background-image: url(./image/fruit.jpg);">Hot</td>
+            <td>38.000</td>
+        </tr>
+
+        <tr>
+            <td>Cold</td>
+            <td>54000</td>
+        </tr>
+
+        
+        
+    </table>
+
+</body>
+
+</html>

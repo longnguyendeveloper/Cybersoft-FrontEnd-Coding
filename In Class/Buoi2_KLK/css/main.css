@@ -1,0 +1,83 @@
+/* GLOBAL */
+
+* {
+    box-sizing: border-box;
+}
+
+.clear {
+    clear: both;
+}
+
+
+/* HEADER */
+
+.header img {
+    width: 250px;
+}
+
+.header ul {
+    list-style: none;
+    background-color: black;
+    padding: 20px 0;
+}
+
+.header ul li a {
+    /*chữ gạch chân*/
+    text-decoration: none;
+    color: white;
+}
+
+.header ul li {
+    display: inline;
+    margin: 0 10px;
+    /* padding: 15px; */
+    /* border: 3px solid red; */
+}
+
+
+/* CAROSEL */
+
+.carousel {
+    background-image: url(../img/slider_1.jpg);
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* PRODUCT */
+
+.product__item {
+    float: left;
+    width: 25%;
+    padding: 0 20px;
+}
+
+.product__item img {
+    width: 100%;
+}
+
+
+/* BANNER */
+
+.banner {
+    background-image: url(../img/nature.jpg);
+    height: 400px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.banner__circle {
+    width: 200px;
+    height: 200px;
+    /* rgba */
+    background-color: rgba(255, 0, 0, 0.7);
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 20px;
+    left: 300px;
+    /* opacity: 0.5; */
+}

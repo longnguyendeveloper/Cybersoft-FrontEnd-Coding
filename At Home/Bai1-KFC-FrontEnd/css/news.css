@@ -1,0 +1,15 @@
+/* HEADER */
+
+.header {
+    background-color: white;
+    width: 50%;
+}
+
+.header h1 {
+    color: brown;
+    text-align: center;
+}
+
+.header p {
+    font-size: x-large;
+}

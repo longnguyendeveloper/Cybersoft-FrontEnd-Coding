@@ -11,14 +11,14 @@
 
 /* HEADER */
 
-.header .header__logo {
-    background-repeat: no-repeat;
-}
-
-.header .header__slogan {
+.header__img-slogen {
     background-repeat: no-repeat;
     float: right;
-    padding-right: 50px;
+    padding-right: 10%;
+}
+
+.header__menu {
+    border: 1px solid brown;
 }
 
 .header ul {
@@ -26,18 +26,15 @@
 }
 
 .header ul li a {
-    margin: 20px;
+    padding: 0 20px 0;
     font-size: 15px;
     text-decoration: none;
+    color: rgb(99, 52, 52);
+    font-family: 'Lucida Sans';
 }
 
 .header ul li {
     display: inline;
-}
-
-.header img {
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 

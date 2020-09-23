@@ -17,10 +17,6 @@
     padding-right: 10%;
 }
 
-.header__menu {
-    border: 1px solid brown;
-}
-
 .header ul {
     list-style: none;
 }
@@ -43,9 +39,9 @@
 .carousel {
     background-image: url(../images/slider_1.png);
     height: 600px;
+    width: auto;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
 }
 
 
@@ -105,18 +101,32 @@
     padding: 0 20px;
 }
 
-.news__left img {
-    width: 100%;
-    position: relative;
-}
-
 .news__right {
     float: left;
     width: 50%;
 }
 
-.news_right-small {
+.news__left__small {
+    position: relative;
     float: left;
-    width: 50%;
     padding: 0 20px;
+    width: 50%;
+}
+
+.news__item {
+    position: relative;
+}
+
+.nnews__item img {
+    width: 100%;
+    display: block;
+}
+
+.news__item p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
 }

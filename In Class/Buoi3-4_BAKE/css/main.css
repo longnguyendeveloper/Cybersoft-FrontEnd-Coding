@@ -17,11 +17,17 @@
                 
                 header {
                     background-color: #4e2a84;
+                    position: fixed;
+                    padding: 20px 0;
+                    width: 100%;
+                    /* z-index: set mức độ ưu tiên để đè position fixxed */
+                    z-index: 9999;
                 }
                 
                 .header__content ul li {
                     list-style: none;
                     display: inline;
+                    padding: 0 10px;
                 }
                 
                 .header__content a {
@@ -65,6 +71,17 @@
                 .carousel__content {
                     color: white;
                     text-align: center;
+                }
+                
+                .carousel__content h1 {
+                    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+                    /* duration : khoảng thời gian chuyển động của 1 chu kỳ 
+                    timing-function: từ 0 đến số giây mình đi nhanh hay chậm, đều hay ko ? Ban đầuxnhanh kết thúc chậm 
+                    iteration-count: số lần loop của chu kỳ
+                    hoặc vô cùng : infinite
+                    direction : khai báo thêm chuyển động chu kỳ khác 
+                    */
+                    animation: upDown 1s linear 0s infinite;
                 }
                 /* NUMBER */
                 
@@ -397,6 +414,10 @@
                     transform: scale(1);
                 }
                 /* FEEDBACK */
+                
+                .feedback h2 {
+                    text-align: center;
+                }
                 /* .feedback {
                     background-image: url(../images/cc1.jpg);
                     height: 700px;
@@ -409,4 +430,114 @@
                     padding: 30px;
                     text-align: center;
                     border: 2px solid #FF0E83;
+                }
+                
+                .feedback .owl-theme .owl-dots .owl-dot.active span {
+                    background-color: black;
+                }
+                
+                .feedback .owl-theme .owl-dots .owl-dot:hover span {
+                    background-color: black;
+                }
+                
+                .feedback .owl-theme .owl-controls .owl-page span {
+                    background-color: rgba(0, 0, 0, 0.2);
+                }
+                /* CONTACT */
+                
+                .contact__form form {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    width: 70%;
+                    margin: 0 auto;
+                    padding: 70px 0;
+                    gap: 10px 20px;
+                }
+                
+                .contact__form textarea {
+                    /* grid-column: 1/3; */
+                    grid-column: 1 / span 2;
+                }
+                
+                .contact__form button {
+                    grid-column: 1 / span 2;
+                }
+                
+                .contact__form input,
+                .contact__form textarea {
+                    font-size: 15px;
+                    /* 1em = 15px */
+                    padding: 1em;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    transition: all .5s;
+                }
+                
+                .contact__form input:focus {
+                    outline: none;
+                    box-shadow: 0px 0px 5px 0.1rem rgba(0, 123, 255, .25);
+                }
+                
+                .contact__form textarea::placeholder {
+                    color: #FF0E83;
+                }
+                
+                .contact__form textarea {
+                    resize: none;
+                }
+                
+                .contact__map iframe {
+                    width: 100%;
+                    margin: auto;
+                    text-align: center;
+                    padding: 0 15px;
+                    border: 3px solid #4E2A84;
+                }
+                /* BACK TO TOP */
+                
+                .backToTop i {
+                    /*display: block: Đang là thẻ INLINE nên ko set được kích thước ---> đổi sang thẻ BLOCK */
+                    display: block;
+                    width: 80px;
+                    height: 80px;
+                    color: aqua;
+                    font-size: 3rem;
+                    text-align: center;
+                    line-height: 70px;
+                    border: 2px solid aqua;
+                    border-radius: 50%;
+                    /* position-fix: luôn đi theo vị trí website */
+                    position: fixed;
+                    right: 50px;
+                    bottom: 20px;
+                    /* thêm tính năng ẩn ở TOP */
+                    opacity: 0;
+                    /* visibility: hidden : người dùng không dùng TAB để select vào được */
+                    visibility: hidden;
+                    transition: all .5s;
+                }
+                
+                .cd-top--is-visible i {
+                    visibility: visible;
+                    opacity: 1;
+                    transition: all .5s;
+                }
+                /* Tạo hiệu ứng enimation */
+                
+                @keyframes upDown {
+                    /* 100s */
+                    /* 1 lần chuyển động / 1 chu kỳ */
+                    0% {}
+                    25% {
+                        transform: translateX(-50px) scale(1.5);
+                    }
+                    50% {
+                        transform: translateX(0px) scale(1);
+                    }
+                    75% {
+                        transform: translateX(50px) scale(1.5);
+                    }
+                    100% {
+                        transform: translateX(50px) scale(1);
+                    }
                 }

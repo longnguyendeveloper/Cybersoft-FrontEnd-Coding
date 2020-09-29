@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* tự quy định: 1rem = 20px (nếu không khai báo thì 1rem = 16px*/
+    font-size: 20px;
+}
+
+
+/* HEADER */
+
+.header {
+    background-color: #474747;
+}
+
+.header span {
+    color: #00CDCE;
+}
+
+.header h1 {
+    color: white;
+}
+
+.header ul li {
+    list-style: none;
+    display: inline;
+    padding: 0 10px;
+}

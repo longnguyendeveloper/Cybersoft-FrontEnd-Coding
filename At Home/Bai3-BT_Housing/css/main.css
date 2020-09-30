@@ -14,20 +14,55 @@ body {
 
 /* HEADER */
 
-.header {
+header {
     background-color: #474747;
+    padding: .5rem 0;
+    width: 100%;
 }
 
-.header span {
+.header__content span {
     color: #00CDCE;
 }
 
-.header h1 {
-    color: white;
-}
-
-.header ul li {
+.header__content ul li {
     list-style: none;
     display: inline;
-    padding: 0 10px;
+    padding: 0 .5rem;
+    color: white;
+    font-size: .8rem;
+}
+
+.header__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__left {
+    padding-left: 1rem;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.header__right {
+    padding-right: 1rem;
+}
+
+
+/* CAROSEL */
+
+.carosel {
+    width: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    margin: auto;
+}
+
+.carosel__content {
+    position: relative;
+}
+
+.carosel__content .text {
+    position: absolute;
 }

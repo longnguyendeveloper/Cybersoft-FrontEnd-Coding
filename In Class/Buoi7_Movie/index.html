@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+
+    <!-- BOOTSTRAP 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+
+    <!-- FONT TEXT -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="container">
+        <!-- "bg-dark text-white text-right container" sử dụng framework bootstrap có sẵn -->
+        <!-- container: nội dụng ở giữa, cách đều canh giữa margin trái phải  -->
+        <p class="bg-dark text-white text-right container mb-0">
+            <i class="fas fa-phone-alt"></i>
+            <span class="mx-3 border-right pr-3">0902 363 912 </span>
+            <i class="fa fa-search"></i>
+        </p>
+
+        <!-- container-fluid: nội dụng ở giữa, with 100% full -->
+        <!-- <p class="bg-dark text-white text-right container-fluid">
+            <span><i class="fas fa-phone-alt"></i>0902363912 <i class="fa fa-search"></i></span>
+        </p> -->
+
+        <!-- thư viện NAV BS4 -->
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"><img src="./img/logo.svg" alt=""></a>
+            <!-- <button class="navbar-toggler" : nút xuất hiện khi ở màn hình nhỏ (responsive) 
+            data-toggle="collapse" data-target="#movieNavBar": truyền id vào code dưới để action expend/collaps button khi ở màn hình reponsive -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#movieNavBar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="movieNavBar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">WHAT'S ON</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">SHORTCODE</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">NEWS</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <!-- CAROUSEL -->
+    <section class="moviewCarousel">
+        <!-- data-ride="carousel" -->
+        <div id="carouselMovie" class="carousel slide carousel-fade">
+            <ol class="container carousel-indicators">
+                <li data-target="#carouselMovie" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselMovie" data-slide-to="1"></li>
+                <li data-target="#carouselMovie" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/hero-1.jpg" class="d-block w-100" alt="...">
+                    <div class="container carousel-caption d-none d-md-block">
+                        <p>Action, Adventure, Fantasy</p>
+                        <h1>End of the World: Part II</h1>
+                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum.</p>
+                        <div>
+                            <span>PG</span>
+                            <button><i class="fa fa-play"></i>PLAY TRAILER</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/hero-2.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <p>Action, Adventure, Fantasy</p>
+                        <h1>End of the World: Part II</h1>
+                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum.</p>
+                        <div>
+                            <span>15</span>
+                            <button><i class="fa fa-play"></i>PLAY TRAILER</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/hero-3.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <p>Action, Adventure, Fantasy</p>
+                        <h1>End of the World: Part II</h1>
+                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum.</p>
+                        <div>
+                            <span>PG</span>
+                            <button><i class="fa fa-play"></i>PLAY TRAILER</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <a class="carousel-control-prev" href="#carouselMovie" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselMovie" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a> -->
+        </div>
+    </section>
+
+
+
+    <!-- NEW IN -->
+    <section class="newIn">
+
+
+    </section>
+
+    <!-- SHOW TIME -->
+    <section class="showTime">
+
+
+    </section>
+
+    <!-- COMING SOON -->
+    <section class="comingSoon">
+
+
+    </section>
+
+    <!-- MOVIE IN -->
+    <section class="movieList">
+
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact">
+
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+    </footer>
+
+    <!-- Thư viện hỗ trợ JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- BOOTSTRAP 4 -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

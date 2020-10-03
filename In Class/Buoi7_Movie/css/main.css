@@ -1,0 +1,75 @@
+/* GLOBAL */
+
+html,
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+/* HEADER */
+
+#movieNavBar .navbar-nav {
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+#movieNavBar .nav-item::after {
+    content: '';
+    width: 0;
+    height: 1px;
+    /* bản thân after là INLINE, nên phải chuyển BLOCK để set được kích thước */
+    display: block;
+    background: linear-gradient(to right, #fbbd61, #ec7532);
+    transition: all .3s;
+}
+
+#movieNavBar .nav-item:hover::after {
+    width: 100%;
+}
+
+
+/* .nav-item.active: 2 cái class cùng 1 thẻ PHẢI viết SÁT nhau */
+
+#movieNavBar .nav-item.active::after {
+    width: 100%;
+}
+
+
+/* VỀ CODE: dùng padding để tạo khoảng cách những title */
+
+
+/* CAROUSEL */
+
+
+/* kỹ thuật canh giữa dành riêng cho absolute(BS4 đã khai báo dùm) */
+
+#carouselMovie .carousel-caption {
+    text-align: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#carouselMovie .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+    /* C1: background: transparent; */
+    /* C2: background-clip: border-box; */
+    background: transparent;
+    opacity: 1;
+}
+
+#carouselMovie .carousel-indicators li.active {
+    background-color: white;
+}
+
+#carouselMovie .carousel-indicators {
+    justify-content: left;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+}

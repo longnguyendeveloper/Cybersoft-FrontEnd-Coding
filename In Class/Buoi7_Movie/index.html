@@ -20,57 +20,56 @@
 </head>
 
 <body>
-
     <!-- HEADER -->
+    <header class="header">
+        <div class="container">
 
-    <header class="container">
-        <!-- "bg-dark text-white text-right container" sử dụng framework bootstrap có sẵn -->
-        <!-- container: nội dụng ở giữa, cách đều canh giữa margin trái phải  -->
-        <p class="bg-dark text-white text-right container mb-0">
-            <i class="fas fa-phone-alt"></i>
-            <span class="mx-3 border-right pr-3">0902 363 912 </span>
-            <i class="fa fa-search"></i>
-        </p>
+            <!-- "bg-dark text-white text-right container" sử dụng framework bootstrap có sẵn -->
+            <!-- container: nội dụng ở giữa, cách đều canh giữa margin trái phải  -->
+            <p class="text-white text-right container mb-0">
+                <i class="fas fa-phone-alt"></i>
+                <span class="mx-3 border-right pr-3">0902 363 912 </span>
+                <i class="fa fa-search"></i>
+            </p>
 
-        <!-- container-fluid: nội dụng ở giữa, with 100% full -->
-        <!-- <p class="bg-dark text-white text-right container-fluid">
+            <!-- container-fluid: nội dụng ở giữa, with 100% full -->
+            <!-- <p class="bg-dark text-white text-right container-fluid">
             <span><i class="fas fa-phone-alt"></i>0902363912 <i class="fa fa-search"></i></span>
-        </p> -->
+            </p> -->
 
-        <!-- thư viện NAV BS4 -->
-
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#"><img src="./img/logo.svg" alt=""></a>
-            <!-- <button class="navbar-toggler" : nút xuất hiện khi ở màn hình nhỏ (responsive) 
+            <!-- thư viện NAV BS4 -->
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="#"><img src="./img/logo.svg" alt=""></a>
+                <!-- <button class="navbar-toggler" : nút xuất hiện khi ở màn hình nhỏ (responsive) 
             data-toggle="collapse" data-target="#movieNavBar": truyền id vào code dưới để action expend/collaps button khi ở màn hình reponsive -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#movieNavBar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#movieNavBar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="movieNavBar">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">WHAT'S ON</a>
-                    </li>
+                <div class="collapse navbar-collapse" id="movieNavBar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">WHAT'S ON</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">SHORTCODE</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">SHORTCODE</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">NEWS</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">NEWS</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">CONTACT</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </header>
 
 
@@ -91,34 +90,37 @@
                         <h1 class="display-4">End of the World: Part II</h1>
                         <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum.</p>
                         <div>
-                            <span class="border rounded-circle p-3">PG</span>
-                            <button><i class="fa fa-play"></i>PLAY TRAILER</button>
+                            <span class="border rounded-circle p-2">PG</span>
+                            <button class="btn-trailer"><i class="fa fa-play mr-2"></i>PLAY TRAILER</button>
                         </div>
                     </div>
+                    <div class="overplay"></div>
                 </div>
                 <div class="carousel-item">
                     <img src="./img/hero-2.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <p>Action, Adventure, Fantasy</p>
-                        <h1>End of the World: Part II</h1>
+                        <p class="text-warning">Action, Adventure, Fantasy</p>
+                        <h1 class="display-4">End of the World: Part II</h1>
                         <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum.</p>
                         <div>
                             <span>15</span>
-                            <button><i class="fa fa-play"></i>PLAY TRAILER</button>
+                            <button class="btn-trailer"><i class="fa fa-play"></i>PLAY TRAILER</button>
                         </div>
                     </div>
+                    <div class="overplay"></div>
                 </div>
                 <div class="carousel-item">
                     <img src="./img/hero-3.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <p>Action, Adventure, Fantasy</p>
-                        <h1>End of the World: Part II</h1>
+                        <p class="text-warning">Action, Adventure, Fantasy</p>
+                        <h1 class="display-4">End of the World: Part II</h1>
                         <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum.</p>
                         <div>
                             <span>PG</span>
-                            <button><i class="fa fa-play"></i>PLAY TRAILER</button>
+                            <button class="btn-trailer"><i class="fa fa-play"></i>PLAY TRAILER</button>
                         </div>
                     </div>
+                    <div class="overplay"></div>
                 </div>
             </div>
             <!-- <a class="carousel-control-prev" href="#carouselMovie" role="button" data-slide="prev">
@@ -133,15 +135,166 @@
     </section>
 
 
-
     <!-- NEW IN -->
     <section class="newIn">
+        <div class="container">
+            <h1 class="newIn__title">NEW IN</h1>
+            <div class="row">
+                <div class="col-3">
+                    <div class="newIn__item">
+                        <div class="newIn__info">
+                            <img src="./img/movie-1.jpg" alt="">
+                            <div class="newIn__overplay"></div>
+                            <div class="newIn__detail">
+                                <i class="fa fa-play"></i>
+                                <a href="#">READ MORE</a>
+                                <p>release: 07 Mars, 2020</p>
+                            </div>
+                        </div>
+                        <p class="newIn__item__title">The last post</p>
+                        <p class="newIn__item__rating">
+                            <!-- i.fa.fa-star*5 -->
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="col-3">
+                    <div class="newIn__item">
+                        <div class="newIn__info">
+                            <img src="./img/movie-2.jpg" alt="">
+                            <div class="newIn__overplay"></div>
+                            <div class="newIn__detail">
+                                <i class="fa fa-play"></i>
+                                <a href="#">READ MORE</a>
+                                <p>release: 07 Mars, 2020</p>
+                            </div>
+                        </div>
+                        <p>The last post</p>
+                        <p>
+                            <!-- i.fa.fa-star*5 -->
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-3">
+                    <div class="newIn__item">
+                        <div class="newIn__info">
+                            <img src="./img/movie-3.jpg" alt="">
+                            <div class="newIn__overplay"></div>
+                            <div class="newIn__detail">
+                                <i class="fa fa-play"></i>
+                                <a href="#">READ MORE</a>
+                                <p>release: 07 Mars, 2020</p>
+                            </div>
+                        </div>
+                        <p>The last post</p>
+                        <p>
+                            <!-- i.fa.fa-star*5 -->
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-3">
+                    <div class="newIn__item">
+                        <div class="newIn__info">
+                            <img src="./img/movie-4.jpg" alt="">
+                            <div class="newIn__overplay"></div>
+                            <div class="newIn__detail">
+                                <i class="fa fa-play"></i>
+                                <a href="#">READ MORE</a>
+                                <p>release: 07 Mars, 2020</p>
+                            </div>
+                        </div>
+                        <p>The last post</p>
+                        <p>
+                            <!-- i.fa.fa-star*5 -->
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
 
 
     </section>
 
     <!-- SHOW TIME -->
-    <section class="showTime">
+    <section class="showTimes">
+        <div class="container mb-4">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link " id="home-tab" data-toggle="tab" href="#mon" role="tab" aria-controls="home" aria-selected="true">MON</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tue" role="tab" aria-controls="profile" aria-selected="false">TUE</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#wed" role="tab" aria-controls="profile" aria-selected="false">WED</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#thu" role="tab" aria-controls="profile" aria-selected="false">THU</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#fri" role="tab" aria-controls="profile" aria-selected="false">FRI</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#sat" role="tab" aria-controls="profile" aria-selected="false">SAT</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#sun" role="tab" aria-controls="profile" aria-selected="false">SUN</a>
+                </li>
+            </ul>
+
+
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade" id="mon" role="tabpanel" aria-labelledby="home-tab">MON TAB</div>
+                <div class="tab-pane fade" id="tue" role="tabpanel" aria-labelledby="profile-tab">TUE TAB</div>
+                <div class="tab-pane fade show active" id="wed" role="tabpanel" aria-labelledby="profile-tab">WED TAB</div>
+                <div class="tab-pane fade" id="thur" role="tabpanel" aria-labelledby="profile-tab">THUR TAB</div>
+                <div class="tab-pane fade" id="fri" role="tabpanel" aria-labelledby="profile-tab">FRI TAB</div>
+                <div class="tab-pane fade" id="sat" role="tabpanel" aria-labelledby="profile-tab">SAT TAB</div>
+                <div class="tab-pane fade" id="sun" role="tabpanel" aria-labelledby="profile-tab">SUN TAB</div>
+
+
+            </div>
+        </div>
 
 
     </section>

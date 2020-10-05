@@ -210,54 +210,47 @@ body {
 }
 
 
-/* SHOWTIMES */
+/* showTimesS */
 
-.showTimes .nav-link {
-    position: relative;
-    color: #4a4a4a;
+.showTimes .nav-tabs .nav-link:hover {
+    border: transparent;
+    display: block;
 }
 
 .showTimes .nav-tabs .nav-link.active {
-    border-color: #ffffff;
-    position: relative;
+    border: transparent;
+    display: block;
+    color: teal;
 }
 
-.showTimes .nav-tabs .nav-link.active::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    height: 3px;
-    left: 0;
-    /* bản thân after là INLINE, nên phải chuyển BLOCK để set được kích thước */
-    background: linear-gradient(to right, #fbbd61, #ec7532);
-    transition: all .3s;
+.nav-tabs .nav-link {
+    border: none;
 }
 
 .showTimes .nav-tabs .nav-link::after {
-    content: '';
-    border-color: #ffffff;
     position: absolute;
-    bottom: 0;
-    width: 0;
-    left: 0;
-    height: 3px;
-    /* bản thân after là INLINE, nên phải chuyển BLOCK để set được kích thước */
     display: block;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
     background: linear-gradient(to right, #fbbd61, #ec7532);
-    transition: all .3s;
+    transition: all 0.5s;
 }
 
-
-/* .showTimes .nav-tabs .nav-link.active::after,
-.showTimes .nav-tabs .nav-link.active:hover {} */
-
-.nav-tabs .nav-link:focus,
-.nav-tabs .nav-link:hover {
-    border-color: #ffffff;
-}
-
-.showTimes .nav-tabs .nav-link:hover::after {
+.showTimes .nav-tabs .nav-link:hover::after,
+.showTimes .nav-tabs .nav-link.active::after {
     width: 100%;
+}
+
+.showTimes .nav-link {
+    color: #4a4a4a;
+    padding: 20px 30px;
+    border-color: none;
+    position: relative;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.385);
 }

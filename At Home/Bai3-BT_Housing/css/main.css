@@ -11,41 +11,61 @@ body {
     font-size: 20px;
 }
 
-
-/* HEADER */
-
 header {
-    background-color: #474747;
-    padding: .5rem 0;
+    background: rgb(25, 25, 25, 0.8);
+    /* position: fixed; */
+    position: fixed;
     width: 100%;
+    z-index: 10;
 }
 
-.header__content span {
-    color: #00CDCE;
-}
-
-.header__content ul li {
-    list-style: none;
+header li {
     display: inline;
-    padding: 0 .5rem;
-    color: white;
-    font-size: .8rem;
+    padding: 1rem;
 }
 
 .header__content {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
 }
 
-.header__left {
-    padding-left: 1rem;
+
+/* HEADER > LOGO  */
+
+.logo__text {
+    text-decoration: none;
     color: white;
-    font-size: 1.1rem;
+    display: flex;
+    font-size: 2.7rem;
+    letter-spacing: 2px;
 }
 
-.header__right {
-    padding-right: 1rem;
+.logo__text span {
+    color: #00cdce;
+}
+
+
+/* HEADER > NAV BAR  */
+
+nav a {
+    padding: 8px 10px;
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+
+/* HEADER > NAV BAR (HOVER) */
+
+nav a:hover {
+    color: #00cdce;
+    border-bottom: 2px solid #00cece00;
+    transition-property: all;
+    transition-duration: 0.5s;
 }
 
 
@@ -71,3 +91,6 @@ p {
     text-align: center;
     color: white;
 }
+
+
+/* ABOUT */

@@ -63,6 +63,11 @@ header {
     position: relative;
 }
 
-.carosel__content .text {
+.carosel__content .text h1,
+p {
     position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: white;
 }

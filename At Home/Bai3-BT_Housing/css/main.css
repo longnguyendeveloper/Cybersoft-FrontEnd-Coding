@@ -69,27 +69,83 @@ nav a:hover {
 }
 
 
-/* CAROSEL */
+/* CAROUSEL */
 
-.carosel {
-    width: 80%;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
+.carousel__content {
+    text-align: center;
     margin: auto;
-}
-
-.carosel__content {
+    width: 80%;
     position: relative;
 }
 
-.carosel__content .text h1,
-p {
+.carousel__content img {
+    padding: 2rem;
+}
+
+
+/* CAROUSEL > TEXT */
+
+.carousel__content .carouseltext {
     position: absolute;
-    height: 100%;
-    width: 100%;
-    text-align: center;
     color: white;
+    top: 50%;
+    left: 10%;
+}
+
+.carousel__content .carouseltext h1 {
+    font-size: 3rem;
+}
+
+.carousel__content .carouseltext p {
+    color: #d3d8d8;
+}
+
+
+/* CAROUSEL > DOTS */
+
+.carousel__content .owl-dots {
+    position: absolute;
+    top: 75%;
+    left: 47%;
+    text-align: center;
+}
+
+.carousel__content .owl-theme .owl-dots .owl-dot.active span {
+    background-color: black;
+}
+
+.carousel__content .owl-theme .owl-dots .owl-dot.active:hover span {
+    background-color: black;
+}
+
+.carousel__content .owl-theme .owl-dots .owl-dot:hover span {
+    background-color: #d3d8d8;
+}
+
+.carousel__content .owl-theme .owl-controls .owl-page span {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+/* CAROUSER > NAV ARROW */
+
+
+/* chưa đổi background of arrow được */
+
+.carousel__content .owl-nav button.owl-prev {
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.carousel__content .owl-nav .owl-prev {
+    background: url(../img/left-arrow.png);
+}
+
+.carousel__content .owl-nav button.owl-next {
+    position: absolute;
+    top: 50%;
+    right: 0;
 }
 
 

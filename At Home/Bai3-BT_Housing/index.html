@@ -49,23 +49,43 @@
     </header>
 
     <!-- CAROUSEL -->
-    <section class="carosel">
-        <div class="owl-carousel owl-theme">
-            <div class="item">
-                <div class="carosel__content">
+    <section class="carousel">
+        <div class="carousel__content">
+            <div class="owl-carousel owl-theme">
+                <div class="item">
                     <img src="./img/b1.jpg" alt="">
-                    <div>
-                        <div class="carosel__content text">
-                            <h1>LOREM IPSUM AMET</h1>
-                            <p>Lorem ipsum dolor sit, consectetur adiping elit.</p>
-                        </div>
+                    <div class="carousel__content carouseltext">
+                        <h1>LOREM IPSUM AMET</h1>
+                        <p>Lorem ipsum dolor sit, consectetur adiping elit.</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="./img/b2.jpg" alt="">
+                    <div class="carousel__content carouseltext">
+                        <h1>LOREM IPSUM AMET</h1>
+                        <p>Lorem ipsum dolor sit, consectetur adiping elit.</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="./img/b3.jpg" alt="">
+                    <div class="carousel__content carouseltext">
+                        <h1>LOREM IPSUM AMET</h1>
+                        <p>Lorem ipsum dolor sit, consectetur adiping elit.</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="./img/b4.jpg" alt="">
+                    <div class="carousel__content carouseltext">
+                        <h1>LOREM IPSUM AMET</h1>
+                        <p>Lorem ipsum dolor sit, consectetur adiping elit.</p>
                     </div>
                 </div>
             </div>
-
-
+        </div>
     </section>
-
     <section class="about"></section>
     <section class="stats"></section>
     <section class="blog"></section>
@@ -97,21 +117,22 @@
         $('.owl-carousel').owlCarousel({
             loop: true,
             margin: 10,
-            nav: false,
+            nav: true,
             responsive: {
                 0: {
                     items: 1
                 },
-                // 600: {
-                //     items: 3
-                // },
-                // 1000: {
-                //     items: 5
-                // }
             }
-
         })
     </script>
+
+    <script>
+        $("#intro").owlCarousel({
+            autoPlay: 1000,
+            stopOnHover: true,
+        })
+    </script>
+
 
     <script src="./js/util.js"></script>
     <script src="./js/mainToTop.js"></script>

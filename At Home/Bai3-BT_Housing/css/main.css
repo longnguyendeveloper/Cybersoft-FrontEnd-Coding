@@ -290,3 +290,49 @@ nav a:hover {
     letter-spacing: 2px;
     font-weight: 400;
 }
+
+
+/* BLOG */
+
+.blog {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.blog h3 {
+    font-size: 4em;
+    margin-bottom: 3rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.blog__content {
+    display: flex;
+    margin: 0 auto;
+}
+
+.blog__content .blog__item img {
+    max-width: 100%;
+}
+
+.blog__item {
+    background-color: #858585;
+    margin: 0 10px;
+}
+
+.blog__item .blog__notImage a {
+    color: #00cdce;
+    font-size: 1.6em;
+    font-weight: 400;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin: 0 15px;
+}
+
+.blog__item .blog__notImage p {
+    font-size: 1.3em;
+    line-height: 40px;
+    letter-spacing: 1px;
+    margin: 0 15px;
+}

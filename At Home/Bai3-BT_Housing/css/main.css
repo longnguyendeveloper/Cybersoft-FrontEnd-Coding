@@ -87,19 +87,23 @@ nav a:hover {
 
 .carousel__content .carouseltext {
     position: absolute;
-    color: white;
     top: 50%;
     left: 10%;
+    color: #fff;
 }
 
-.carousel__content .carouseltext h3 {
-    font-size: 2rem;
+.carouseltext h4 {
+    font-size: 60px;
     margin-bottom: 10px;
+    font-weight: 900;
+    letter-spacing: 3px;
 }
 
-.carousel__content .carouseltext p {
+.carouseltext p {
+    font-size: 24px;
+    font-weight: 400;
     color: #d3d8d8;
-    font-size: .8rem;
+    line-height: 35px;
 }
 
 
@@ -145,6 +149,7 @@ nav a:hover {
 
 .carousel__content .owl-nav .owl-prev span {
     visibility: hidden;
+    opacity: 0;
 }
 
 
@@ -164,4 +169,124 @@ nav a:hover {
 }
 
 
+/* bị lỗi đen khi hover ---> Không cho hover  */
+
+.owl-theme .owl-nav [class*="owl-prev"]:hover {
+    background: url(../img/left-arrow.png);
+}
+
+.owl-theme .owl-nav [class*="owl-next"]:hover {
+    background: url(../img/right-arrow.png);
+}
+
+
 /* ABOUT */
+
+
+/* ABOUT > ABOUT CONTENT */
+
+.about h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.about__content p {
+    font-size: .8rem;
+    color: #7f7777;
+    margin-top: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.about__content {
+    margin: 0 auto;
+    width: 60%;
+    padding: 2rem 0;
+    display: flex;
+    /*Ko thể dùng justify-content (thẻ cha ko còn chỗ trống) ---> chữ quá nhiều và sát lại thì dùng padding để tạo khoảng cách*/
+    justify-content: space-around;
+    text-align: center;
+}
+
+.about__content .icon__content {
+    border: 1px solid #7f7777;
+    border-radius: 50%;
+    width: 100%;
+}
+
+.about__content i {
+    border: 1px solid #7f7777;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    font-size: 1rem;
+    line-height: 100px;
+    margin: 1rem 0;
+}
+
+.icon__small:hover i {
+    color: #fff;
+    background: #00cdce;
+    transition: all .5s;
+}
+
+
+/* ABOUT > ABOUT US*/
+
+.about__us {
+    text-align: center;
+    margin: 1rem auto;
+    width: 60%;
+}
+
+.about__us h3 {
+    color: #00cdce;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.about__us p {
+    margin: 5px 0 0 0;
+    text-align: center;
+    line-height: 29px;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+
+
+/* STATS */
+
+.stats {
+    text-align: center;
+    background: #00cdce;
+    margin: 2rem 0;
+}
+
+.stats h3 {
+    padding: 3rem 0;
+    font-size: 3em;
+    font-weight: 400;
+}
+
+.number__content {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 0 0 3rem 0;
+    width: 60%;
+}
+
+.number__content p {
+    color: #fff;
+    font-size: 56px;
+    letter-spacing: 5px;
+}
+
+.number__content h4 {
+    color: #000;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 400;
+}

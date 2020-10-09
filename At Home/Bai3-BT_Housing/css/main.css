@@ -275,13 +275,14 @@ nav a:hover {
     justify-content: space-around;
     margin: 0 auto;
     padding: 0 0 3rem 0;
-    width: 60%;
+    width: 80%;
 }
 
 .number__content p {
     color: #fff;
     font-size: 56px;
     letter-spacing: 5px;
+    line-height: 2rem;
 }
 
 .number__content h4 {
@@ -291,11 +292,16 @@ nav a:hover {
     font-weight: 400;
 }
 
+.counter {
+    width: 8rem;
+    height: 3rem;
+}
+
 
 /* BLOG */
 
 .blog {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -313,6 +319,7 @@ nav a:hover {
 
 .blog__content .blog__item img {
     max-width: 100%;
+    border-top: 5px solid #00cdce;
 }
 
 .blog__item {

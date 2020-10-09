@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Housing</title>
 
+    <!-- Getboostrap Popup  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
     <!-- FONT GOOGLE -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 
@@ -28,11 +31,9 @@
     <header>
         <div class="header__content">
             <!-- LOGO -->
-
             <a href="#" class="logo__text">
                 Hous<span>ing</span>
             </a>
-
 
             <!-- NAVIGATION BAR  -->
             <nav>
@@ -144,7 +145,7 @@
             </div>
 
             <div class="number__item">
-                <p class="counter">10</p>
+                <p class="counter">1021</p>
                 <h4>projects</h4>
             </div>
 
@@ -165,9 +166,33 @@
                 <div class="blog__notImage">
                     <a href="">Lorem Ipsum passage,</a>
                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
-                    <a href=""><button>Reade more..</button></a>
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Read more...</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Housing</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="./img/g1.jpg" alt="">
+                                    <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                                        consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
 
             <div class="blog__item">
                 <img src="./img/g2.jpg" alt="">
@@ -189,6 +214,9 @@
 
         </div>
 
+
+
+
     </section>
 
 
@@ -197,6 +225,8 @@
     <section class="subscribe"></section>
     <section class="ouragents"></section>
     <section class="contactus"></section>
+
+
 
     <footer>
     </footer>
@@ -235,6 +265,10 @@
 
     <script src="./js/util.js"></script>
     <script src="./js/mainToTop.js"></script>
+
+    <!-- Bootstrap -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </body>
 

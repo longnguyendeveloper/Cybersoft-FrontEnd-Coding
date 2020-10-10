@@ -1,0 +1,58 @@
+/* desktop first */
+
+
+/* xây dựng size ở nàm hình lớn trước, rồi chỉnh dần cho màn hình nhỏ */
+
+h1 {
+    background-color: red;
+}
+
+
+/* type: screen,
+print,
+speech,
+all */
+
+@media screen and (max-width:1200px) {
+    /* code sẽ ảnh hưởng tới vùng nhỏ hơn 1200px */
+    h1 {
+        background-color: gold;
+    }
+}
+
+@media screen and (max-width:768px) {
+    /* code sẽ ảnh hưởng tới vùng nhỏ hơn 768px */
+    h1 {
+        background-color: green;
+    }
+}
+
+
+/* mobile first */
+
+
+/* xây dựng size ở nàm hình nhỏ trước, rồi chỉnh dần cho màn hình lớn */
+
+h2 {
+    background-color: pink;
+}
+
+@media screen and (min-width: 768px) {
+    /* Phải lớn hơn 768px mới ảnh hưởng */
+    h2 {
+        background-color: violet;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    /* Phải lớn hơn 992px mới ảnh hưởng */
+    h2 {
+        background-color: tomato;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width:1000px) {
+    h2 {
+        background-color: teal;
+    }
+}

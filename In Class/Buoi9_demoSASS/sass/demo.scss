@@ -1,0 +1,69 @@
+// khai báo biến
+// "$"+tên biến
+$bg-color: yellow;
+h1 {
+    background-color: $bg-color;
+}
+
+h2 {
+    background-color: $bg-color;
+}
+
+// .sec1 h2 (thay thế bằng) --> Kỹ thuật: Nesting của scss
+// Lưu ý chỉ nên viết tối đa 5 thẻ
+.sec1 {
+    h2 {
+        background-color: $bg-color;
+    }
+    button {
+        background-color: red;
+        // button:hover thay thế bằng ---> &:parent selector ("&" thay thế = "button"
+        &:hover {
+            background-color: $bg-color;
+        }
+    }
+}
+
+// Kế thừa (@extend )
+.sec2 {
+    @extend .sec1;
+    color: white;
+}
+
+// placeholder: chỗ chứa và cho những thằng khác kế thừa
+%styleSection {
+    h2 {
+        background-color: blue;
+    }
+}
+
+.sec3 {
+    @extend %styleSection;
+}
+
+// Mixin (gần giống hàm), không có tham số truyền vào
+// khai báo/ tạo Mixin
+@mixin styleSection1() {
+    h2 {
+        background-color: violet;
+    }
+}
+
+.sec4 {
+    @include styleSection1;
+}
+
+// Mixin có tham số truyền vào ---> giúp thay đổi những giá trị có giá trị cần thay đổi
+@mixin styleSection2($bg) {
+    h2 {
+        background-color: $bg;
+    }
+}
+
+.sec4 {
+    @include styleSection2(pink)
+}
+
+.sec5 {
+    @include styleSection2(green)
+}

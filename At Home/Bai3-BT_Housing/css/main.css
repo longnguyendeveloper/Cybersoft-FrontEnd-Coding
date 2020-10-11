@@ -74,21 +74,15 @@
     
     .carousel__content {
         text-align: center;
-        /* margin: auto;
-        width: 100%; */
         position: relative;
-    }
-    
-    .carousel__content img {
-        /* padding: 2rem; */
     }
     /* CAROUSEL > TEXT */
     
     .carousel__content .carouseltext {
         position: absolute;
         top: 50%;
-        left: 10%;
         color: #fff;
+        transform: translateX(100%);
     }
     
     .carouseltext h4 {

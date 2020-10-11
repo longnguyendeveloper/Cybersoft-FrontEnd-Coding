@@ -1,0 +1,7 @@
+.udCarousel {
+    // "../img/cover.jpg": vì browser đang đọc file CSS ở thư mục ngoài, còn mình đang code ở scss
+    background-image: url(../img/cover.jpg);
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}

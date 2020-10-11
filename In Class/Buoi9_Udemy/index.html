@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Undemy Project</title>
+    <title>Udemy Project</title>
 
     <!-- Font Google  -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -20,7 +20,72 @@
 </head>
 
 <body>
-    <header></header>
+    <header>
+        <nav class="navbar navbar-expand-md">
+            <!--Tạo thêm div chứa icon hambuger -->
+            <!-- d-none: bootstrap = display none -->
+            <div class="col-2 col-sm-2 d-md-none">
+                <i class="fa fa-bars"></i>
+                <i class="fa fa-search"></i>
+            </div>
+
+            <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-7">
+                <div class="header__left">
+                    <a class="navbar-brand" href="">
+                        <img src="./img/logo-coral.svg" alt="">
+                    </a>
+
+                    <span class="header__categories">
+                        <i class="fa fa-th"></i>
+                        Categories
+                    </span>
+
+                    <form class="header__form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for anything" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="col-1 col-sm-1 col-md-3 col-lg-3 col-xl-5">
+                <div class="header__right">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item business">
+                            <a class="nav-link" href="#">Udemy for business</a>
+                        </li>
+                        
+                        <li class="nav-item teach">
+                            <a class="nav-link" href="#">Teach on Udemy</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa fa-shopping-cart"></i></a>
+                        </li>
+
+                        <li class="nav-item ud-btnGroup">
+                            <button class="ude-btnWhite">Log In</button>
+                            <button class="ude-btnRed">Sign Up</button>
+                        </li>
+
+
+
+                    </ul>
+
+
+                </div>
+            </div>
+
+
+        </nav>
+
+
+    </header>
 
     <section class="udCarousel"></section>
     <section class="intro"></section>

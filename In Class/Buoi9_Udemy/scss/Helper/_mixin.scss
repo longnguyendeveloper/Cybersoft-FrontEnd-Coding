@@ -1,0 +1,36 @@
+// Mixin: Nếu thuộc tính được lặp đi lặp lại nhiều thì nên tạo mixin để gọi ra đỡ phải tạo nhiều
+@mixin styleText($color, $fs, $fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+@mixin styleButton ($bg-color, $border-color, $radius, $py, $px) {
+    background-color: $bg-color;
+    border: 1px solid $border-color;
+    border-radius: $radius;
+    padding: $py $px;
+}
+
+@mixin styleHoverButton($bg-color, $border-color, $color) {
+    background-color: $bg-color;
+    border-color: $border-color;
+    color: $color;
+}
+
+// $screen: chứa tên màn hình
+@mixin responsive($screen) {
+    // lỗi bị cách khi save???
+    @if (map-has-key($map:$breakpoints, $key:$screen)) {
+        // tên màn hình hợp lệ
+        // lấy giá trị màn hình theo tên
+        $value: map-get($map:$breakpoints, $key:$screen);
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    }
+    @else {
+        // tên màn hình sai
+        @warn "Tên màn hình không đúng!";
+    }
+}

@@ -7,5 +7,99 @@
 html,
 body {
   font-family: 'Roboto', sans-serif;
+  color: #29303b;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.ude-btnWhite {
+  background-color: #fff;
+  border: 1px solid #686f7a;
+  border-radius: 2px;
+  padding: 11px 12px;
+  color: #686f7a;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.ude-btnWhite:hover {
+  background-color: #fff;
+  border-color: #29303b;
+  color: #29303b;
+}
+
+.ude-btnRed {
+  background-color: #ec5252;
+  border: 1px solid #ec5252;
+  border-radius: 2px;
+  padding: 11px 12px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.ude-btnRed:hover {
+  background-color: #992337;
+  border-color: #992337;
+  color: #fff;
+}
+
+header {
+  color: #505763;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.header__left {
+  display: flex;
+}
+
+.header__left .navbar-brand img {
+  width: 110px;
+}
+
+.header__left .header__categories {
+  margin: 0 15px;
+  align-self: center;
+}
+
+.header__left .header__form {
+  flex-grow: 1;
+}
+
+.header__right .nav-link {
+  color: #505763;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 1200px) {
+  .header__right .business,
+  .header__right .teach {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__right .ud-btnGroup {
+    display: none;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__left {
+    justify-content: center;
+  }
+  .header__left .header__form, .header__left .header__categories {
+    display: none;
+  }
+}
+
+.udCarousel {
+  background-image: url(../img/cover.jpg);
+  height: 500px;
+  background-size: cover;
+  background-position: center;
 }
 /*# sourceMappingURL=main.css.map */

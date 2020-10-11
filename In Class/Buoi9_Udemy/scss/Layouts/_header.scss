@@ -1,0 +1,55 @@
+header {
+    @include styleText($color-black-light, $fs-1, $fw-normal);
+}
+
+.header__left {
+    display: flex;
+    .navbar-brand {
+        img {
+            width: 110px;
+        }
+    }
+    .header__categories {
+        margin: 0 15px;
+        align-self: center;
+    }
+    .header__form {
+        // flex-grow: tăng kích thước cho các con của flex
+        flex-grow: 1;
+    }
+}
+
+.header__right {
+    .nav-link {
+        @include styleText($color-black-light, $fs-1, $fw-normal);
+    }
+}
+
+// responsive: để cuối cùng
+.header__right {
+    // phạm vi nhỏ hơn 1200px
+    @include responsive("extra-large") {
+        .business,
+        .teach {
+            display: none;
+        }
+    }
+
+    // phạm vi nhỏ hơn 768px
+    @include responsive("medium") {
+        .ud-btnGroup {
+            display: none;
+            white-space: nowrap;
+        }
+    }
+}
+
+.header__left{
+    // phạm vi nhỏ hơn 768px
+    @include responsive("medium") {
+        justify-content: center;
+        .header__form, .header__categories{
+            display: none;
+        }
+    }
+}

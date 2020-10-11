@@ -1,0 +1,21 @@
+// Chỉ chứa đường dẫn tới các file con 
+//1. Helper
+// Tạo biến đầu tiên 
+@import './Helper/variables';
+//2. Tạo Hàm
+@import './Helper/mixin';
+//3. Vendor
+// Chỉ import file scss của thư viện 
+//4. Base
+// xóa margin, padding trình duyệt 
+@import './Base/reset';
+// Đè code cho cả trang web 
+@import './Base/customize';
+//5. Components
+@import './Components/button';
+//6. Layouts 
+@import './Layouts/header';
+@import './Layouts/carousel';
+//7. Pages thiết kế riêng cho mỗi trang khác nhau 
+//8. Theme : thay đổi UI theo thời điểm khác nhau
+// nằm cuối cùng mới đè được code ở phía trên

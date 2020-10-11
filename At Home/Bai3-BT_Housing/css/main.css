@@ -9,6 +9,7 @@
         font-family: 'Montserrat', sans-serif;
         /* tự quy định: 1rem = 20px (nếu không khai báo thì 1rem = 16px*/
         font-size: 20px;
+        scroll-behavior: smooth;
     }
     
     header {
@@ -73,13 +74,13 @@
     
     .carousel__content {
         text-align: center;
-        margin: auto;
-        width: 80%;
+        /* margin: auto;
+        width: 100%; */
         position: relative;
     }
     
     .carousel__content img {
-        padding: 2rem;
+        /* padding: 2rem; */
     }
     /* CAROUSEL > TEXT */
     

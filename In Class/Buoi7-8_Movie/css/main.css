@@ -5,6 +5,19 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+.line::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    /* bản thân after là INLINE, nên phải chuyển BLOCK để set được kích thước */
+    display: block;
+    bottom: -1px;
+    left: 0;
+    background: linear-gradient(to right, #fbbd61, #ec7532);
+    transition: all .3s;
+}
+
 
 /* HEADER */
 
@@ -12,24 +25,18 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, .2);
 }
 
-#movieNavBar .nav-item::after {
-    content: '';
-    width: 0;
-    height: 1px;
-    /* bản thân after là INLINE, nên phải chuyển BLOCK để set được kích thước */
-    display: block;
-    background: linear-gradient(to right, #fbbd61, #ec7532);
-    transition: all .3s;
+#movieNavBar .nav-item{
+    position: relative;
 }
 
-#movieNavBar .nav-item:hover::after {
+#movieNavBar .nav-item:hover.line::after {
     width: 100%;
 }
 
 
 /* .nav-item.active: 2 cái class cùng 1 thẻ PHẢI viết SÁT nhau */
 
-#movieNavBar .nav-item.active::after {
+#movieNavBar .nav-item.active.line::after {
     width: 100%;
 }
 
@@ -113,15 +120,8 @@ body {
     margin-bottom: 40px;
 }
 
-.newIn__title::after {
-    content: "";
-    position: absolute;
-    display: block;
-    bottom: 0;
-    left: 0;
+.newIn__title.line::after {
     width: 125px;
-    height: 4px;
-    background: linear-gradient(to right, #fbbd61, #ec7532);
 }
 
 .newIn__info {
@@ -210,7 +210,18 @@ body {
 }
 
 
-/* showTimesS */
+/* showTimes */
+
+.showTimes{
+    padding-top: 60px;
+}
+
+.showTimes .nav-link {
+    color: #4a4a4a;
+    padding: 20px 30px;
+    border-color: none;
+    position: relative;
+}
 
 .showTimes .nav-tabs .nav-link:hover {
     border: transparent;
@@ -227,29 +238,12 @@ body {
     border: none;
 }
 
-.showTimes .nav-tabs .nav-link::after {
-    position: absolute;
-    display: block;
-    content: "";
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: linear-gradient(to right, #fbbd61, #ec7532);
-    transition: all 0.5s;
-}
-
 .showTimes .nav-tabs .nav-link:hover::after,
 .showTimes .nav-tabs .nav-link.active::after {
     width: 100%;
 }
 
-.showTimes .nav-link {
-    color: #4a4a4a;
-    padding: 20px 30px;
-    border-color: none;
-    position: relative;
-}
+
 
 .nav-tabs {
     border-bottom: 1px solid rgba(128, 128, 128, 0.385);

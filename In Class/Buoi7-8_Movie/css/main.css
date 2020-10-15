@@ -2,30 +2,38 @@
 
 html,
 body {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
 }
 
-.line::after{
-    content: '';
+.line::after {
+    content: "";
     position: absolute;
-    width: 0;
     height: 3px;
     /* bản thân after là INLINE, nên phải chuyển BLOCK để set được kích thước */
     display: block;
     bottom: -1px;
     left: 0;
     background: linear-gradient(to right, #fbbd61, #ec7532);
-    transition: all .3s;
+    transition: all 0.3s;
 }
 
+.section-title {
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #d8d8d8d8;
+    padding-bottom: 15px;
+    position: relative;
+    margin-bottom: 40px;
+    color: #ec7532;
+}
 
 /* HEADER */
 
 #movieNavBar .navbar-nav {
-    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-#movieNavBar .nav-item{
+#movieNavBar .nav-item {
     position: relative;
 }
 
@@ -33,19 +41,15 @@ body {
     width: 100%;
 }
 
-
 /* .nav-item.active: 2 cái class cùng 1 thẻ PHẢI viết SÁT nhau */
 
 #movieNavBar .nav-item.active.line::after {
     width: 100%;
 }
 
-
 /* VỀ CODE: dùng padding để tạo khoảng cách những title */
 
-
 /* CAROUSEL */
-
 
 /* kỹ thuật canh giữa dành riêng cho absolute(BS4 đã khai báo dùm) */
 
@@ -107,18 +111,7 @@ body {
     width: 100%;
 }
 
-
 /* NEWIN */
-
-.newIn__title {
-    font-size: 18px;
-    color: #ec7532;
-    letter-spacing: 2px;
-    border-bottom: 1px solid #d8d8d8d8;
-    padding-bottom: 15px;
-    position: relative;
-    margin-bottom: 40px;
-}
 
 .newIn__title.line::after {
     width: 125px;
@@ -135,18 +128,18 @@ body {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%) scale(1);
-    transition: all, .3s;
+    transition: all, 0.3s;
 }
 
 .newIn__detail {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(.8);
+    transform: translate(-50%, -50%) scale(0.8);
     text-align: center;
     opacity: 0;
     visibility: hidden;
-    transition: all, .3s;
+    transition: all, 0.3s;
 }
 
 .newIn__detail i {
@@ -189,7 +182,6 @@ body {
 
 .newIn__item__rating .star__grey {
     color: #d8d8d8;
-    ;
 }
 
 .newIn__overplay {
@@ -201,18 +193,17 @@ body {
     left: 0;
     /* tạo div ngoài thành hình bình hành */
     transform: skewX(30deg) translateX(-100%);
-    transition: all .4s;
-    opacity: .9;
+    transition: all 0.4s;
+    opacity: 0.9;
 }
 
 .newIn__info:hover .newIn__overplay {
     transform: skewX(30deg) translateX(0);
 }
 
-
 /* showTimes */
 
-.showTimes{
+.showTimes {
     padding-top: 60px;
 }
 
@@ -243,8 +234,66 @@ body {
     width: 100%;
 }
 
-
-
 .nav-tabs {
     border-bottom: 1px solid rgba(128, 128, 128, 0.385);
+}
+
+.showTimes__list i,
+span {
+    font-size: 14px;
+}
+
+.showTimes__length span {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    line-height: 35px;
+    text-align: center;
+}
+
+.showTimes__length {
+    text-align: center;
+}
+
+/* COMMING SOON */
+.comingSoon__bg {
+    padding: 80px 0;
+    background-image: url(../img/slide-3.png);
+    background-size: cover;
+    background-position: center center;
+}
+
+.comingSoon_title.section-title.line::after {
+    width: 125px;
+}
+
+.comingSoon__detail .section-title {
+    border: none;
+    font-size: 16px;
+}
+
+.coming__trailer {
+    position: relative;
+}
+.coming__trailer i{
+    display: block;
+    border: 3px solid #ec7532;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    margin: auto;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s;
+}
+
+.coming__trailer .fa-play:hover {
+    transform: scale(0.9);
 }

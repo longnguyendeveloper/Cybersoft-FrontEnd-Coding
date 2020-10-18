@@ -142,11 +142,47 @@ document.getElementById('btnThongBao').onclick = function () {
         buttonThongBao.className = 'btn btn-success';
         buttonThongBao.innerHTML = 'hoàn thành đăng nhập';
     }
-    else{
+    else {
         var buttonThongBao = document.getElementById('btnThongBao');
         buttonThongBao.className = 'btn btn-danger';
         buttonThongBao.innerHTML = 'thất bại';
     }
 }
 
+// ------------------ Dom dựa vào tên thẻ (tagname)--------------------
+
+var dsTheSection = document.getElementsByTagName('section');
+
+dsTheSection[1].style.color = 'red';
+dsTheSection[1].innerHTML = 'Front end 54';
+
+for (var i = 0; i < dsTheSection.length; i++) {
+    var tagSection = dsTheSection[i];
+    tagSection.style.color = 'pink';
+}
+
+console.log(dsTheSection);
+
+
+// ------------------ Dom dựa vào classname-------------------
+
+var dsTheClassName = document.getElementsByClassName('txt_');
+
+console.log('dsTheClassName', dsTheClassName);
+for (var i = 0; i < dsTheClassName.length; i++) {
+    var tagClass = dsTheClassName[i];
+    tagClass.style.fontSize = '80px';
+}
+
+// ------------------ Dom dựa vào QuerySelector-------------------
+// trả về 1 đối tượng đầu tiên có selector đó
+var tagPExample = document.querySelector('.example');
+tagPExample.style.fontWeight = ('bold');
+
+// ------------------ Dom dựa vào QuerySelectorAll-------------------
+// Trả về 1 mảng chứa các thẻ có selector đó. Lưu ý: nếu chỉ có 1 thẻ thì vẫn trả về mảng
+
+var tagPExample1 = document.querySelectorAll('.example')[1];
+
+tagPExample1.style.color = ('violet');
 

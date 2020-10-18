@@ -275,7 +275,7 @@ span {
 .coming__trailer {
     position: relative;
 }
-.coming__trailer i{
+.coming__trailer i {
     display: block;
     border: 3px solid #ec7532;
     width: 70px;
@@ -297,3 +297,55 @@ span {
 .coming__trailer .fa-play:hover {
     transform: scale(0.9);
 }
+/* MOVIE IN */
+
+.carousel__movie {
+    display: flex;
+}
+
+.carousel__movie .items img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10%;
+}
+
+/* CONTACT */
+.contact h3 {
+    color: #ec7532;
+    
+}
+.contact p{
+    font-weight: 200;
+}
+
+/* FOOTER */
+footer {
+    background-color: black;
+    color: white;
+    
+}
+
+footer h6{
+    font-size: 16px;
+    color: #ec7532;
+}
+
+footer a{
+    font-size: 13px;
+    display: block;
+    color: white;
+}
+
+footer a:hover{
+    text-decoration: none;
+    color: #ec7532;
+    transition: all 0.3s;
+}
+
+footer .end{
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+} 
+
+
+

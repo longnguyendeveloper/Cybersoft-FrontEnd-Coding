@@ -4,6 +4,7 @@
             &:hover {
                 @include styleHoverButton($color-white-0, $color-black-0, $color-black-0)
             }
+            width: 78.2167px;
         }
         
         .ude-btnRed {
@@ -12,4 +13,5 @@
             &:hover {
                 @include styleHoverButton($color-red-2, $color-red-2, $color-white-0)
             }
+            
         }

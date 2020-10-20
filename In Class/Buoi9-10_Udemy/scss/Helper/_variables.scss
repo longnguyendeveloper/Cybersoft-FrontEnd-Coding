@@ -30,6 +30,9 @@ $mg-1: 10px;
 $mg-2: 25px;
 //variable border-radius
 $border-radius: 2px;
+//variable border-style
+$border-none: none;
+$border-gray-1: #dedfe0;;
 //variable padding
 $pd-0: 5px; //default
 $pd-1: 10px;
@@ -41,6 +44,8 @@ $fw-normal: normal;
 $fw-bold-0: 600;
 $fw-bold-1: 700;
 $fw-bold: bold;
+//variable box-shadow
+$bshadow-none: none;
 //break points
 // Kích thước màn hình
 $breakpoints:( 'extra-large': 1200px, 'large': 992px, 'medium': 768px, 'small': 576px, )

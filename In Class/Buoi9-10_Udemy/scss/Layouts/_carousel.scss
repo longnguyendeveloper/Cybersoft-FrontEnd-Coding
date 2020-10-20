@@ -4,4 +4,43 @@
     height: 500px;
     background-size: cover;
     background-position: center;
+    // position: relative;
+    align-items: center;
+    display: flex;
+
+    .carousel__content {
+        width: 450px;
+        margin-left: 10%;
+        h1 {
+            @include styleText($color-white-0, $fs-4, $fw-bold-1);
+        }
+
+        p {
+            @include styleText($color-white-0, $fs-0 + 3px, $fw-normal);
+        }
+
+        .form-control,
+        .input-group-append,
+        .input-group,
+        .input-group-text {
+            height: 50px;
+        }
+
+        .form-control,
+        .input-group-append,
+        .input-group,
+        .input-group-text {
+            @include box($color-white-0, $bshadow-none, $border-none);
+        }
+
+        .input-group-append:hover .input-group-text {
+            background-color: $color-red-0;
+        }
+        .input-group-append:hover {
+            background-color: $color-red-0;
+        }
+        .input-group-append:hover .fa {
+            color: #ffffff !important;
+        }
+    }
 }

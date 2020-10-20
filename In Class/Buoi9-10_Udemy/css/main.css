@@ -66,22 +66,30 @@ header {
 
 .header__left .header__form {
   flex-grow: 1;
-}
-
-.header__left .header__form .form-control {
-  background-color: rgba(20, 23, 28, 0.05);
+  background-color: #f2f3f5;
+  box-shadow: none;
   border: none;
 }
 
-.header__left .header__form .form-control:focus {
+.header__left .header__form .form-control, .header__left .header__form .input-group-text {
+  background-color: #f2f3f5;
   box-shadow: none;
+  border: none;
+  width: 44px;
+  height: 44px;
+}
+
+.header__left .header__form .form-control:focus {
   background-color: #fff;
+  box-shadow: none;
+  border: #dedfe0;
 }
 
 .header__right .nav-link {
   color: #505763;
   font-size: 13px;
   font-weight: normal;
+  padding-top: 1rem;
 }
 
 @media screen and (max-width: 1200px) {
@@ -113,5 +121,52 @@ header {
   height: 500px;
   background-size: cover;
   background-position: center;
+  align-items: center;
+  display: flex;
+}
+
+.udCarousel .carousel__content {
+  width: 450px;
+  margin-left: 10%;
+}
+
+.udCarousel .carousel__content h1 {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.udCarousel .carousel__content p {
+  color: #fff;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.udCarousel .carousel__content .form-control,
+.udCarousel .carousel__content .input-group-append,
+.udCarousel .carousel__content .input-group,
+.udCarousel .carousel__content .input-group-text {
+  height: 50px;
+}
+
+.udCarousel .carousel__content .form-control,
+.udCarousel .carousel__content .input-group-append,
+.udCarousel .carousel__content .input-group,
+.udCarousel .carousel__content .input-group-text {
+  background-color: #fff;
+  box-shadow: none;
+  border: none;
+}
+
+.udCarousel .carousel__content .input-group-append:hover .input-group-text {
+  background-color: #ec5252;
+}
+
+.udCarousel .carousel__content .input-group-append:hover {
+  background-color: #ec5252;
+}
+
+.udCarousel .carousel__content .input-group-append:hover .fa {
+  color: #ffffff !important;
 }
 /*# sourceMappingURL=main.css.map */

@@ -18,6 +18,15 @@
     color: $color;
 }
 
+@mixin box ($bg-color,$box-shadow,$border){
+    background-color: $bg-color;
+    box-shadow: $box-shadow;
+    border: $border;
+}
+    
+
+
+
 // $screen: chứa tên màn hình
 @mixin responsive($screen) {
     @if (map-has-key($map:$breakpoints, $key:$screen)) {

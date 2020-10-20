@@ -16,23 +16,27 @@ header {
     .header__form {
         // flex-grow: tăng kích thước cho các con của flex
         flex-grow: 1;
-        .form-control {
-            background-color: $color-gray-1;
-            border: none;
+        // Set style mặc định cho thanh search box & icon search
+        @include box($color-white-cream,$bshadow-none,$border-none);
+        .form-control, .input-group-text{
+            @include box($color-white-cream,$bshadow-none,$border-none);
+            width: 44px;
+            height: 44px;
+        }
+        .form-control:focus  {
+            @include box($color-white-0,$bshadow-none,$border-gray-1)
         }
 
-        //click to Seachbox ---> Form__control
-        .form-control:focus{
-            box-shadow: none;
-            background-color: $color-white-0;
-        }
-
+        // .form-control:focus .input-group-text{
+        //     @include box($color-white-0,$bshadow-none,$border-gray-1)
+        // }
     }
 }
 
 .header__right {
     .nav-link {
         @include styleText($color-black-light, $fs-1, $fw-normal);
+        padding-top: 1rem;
     }
 }
 

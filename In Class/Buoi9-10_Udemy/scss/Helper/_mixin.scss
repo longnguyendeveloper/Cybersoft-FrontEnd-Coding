@@ -20,7 +20,6 @@
 
 // $screen: chứa tên màn hình
 @mixin responsive($screen) {
-    // lỗi bị cách khi save???
     @if (map-has-key($map:$breakpoints, $key:$screen)) {
         // tên màn hình hợp lệ
         // lấy giá trị màn hình theo tên

@@ -16,6 +16,17 @@ header {
     .header__form {
         // flex-grow: tăng kích thước cho các con của flex
         flex-grow: 1;
+        .form-control {
+            background-color: $color-gray-1;
+            border: none;
+        }
+
+        //click to Seachbox ---> Form__control
+        .form-control:focus{
+            box-shadow: none;
+            background-color: $color-white-0;
+        }
+
     }
 }
 
@@ -44,11 +55,12 @@ header {
     }
 }
 
-.header__left{
+.header__left {
     // phạm vi nhỏ hơn 768px
     @include responsive("medium") {
         justify-content: center;
-        .header__form, .header__categories{
+        .header__form,
+        .header__categories {
             display: none;
         }
     }

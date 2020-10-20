@@ -68,6 +68,16 @@ header {
   flex-grow: 1;
 }
 
+.header__left .header__form .form-control {
+  background-color: rgba(20, 23, 28, 0.05);
+  border: none;
+}
+
+.header__left .header__form .form-control:focus {
+  box-shadow: none;
+  background-color: #fff;
+}
+
 .header__right .nav-link {
   color: #505763;
   font-size: 13px;
@@ -92,7 +102,8 @@ header {
   .header__left {
     justify-content: center;
   }
-  .header__left .header__form, .header__left .header__categories {
+  .header__left .header__form,
+  .header__left .header__categories {
     display: none;
   }
 }

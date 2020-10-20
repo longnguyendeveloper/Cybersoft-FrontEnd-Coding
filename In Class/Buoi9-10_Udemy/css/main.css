@@ -71,7 +71,8 @@ header {
   border: none;
 }
 
-.header__left .header__form .form-control, .header__left .header__form .input-group-text {
+.header__left .header__form .form-control,
+.header__left .header__form .input-group-text {
   background-color: #f2f3f5;
   box-shadow: none;
   border: none;
@@ -113,6 +114,12 @@ header {
   .header__left .header__form,
   .header__left .header__categories {
     display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav i.fa.fa-bars {
+    padding-right: 20px;
   }
 }
 

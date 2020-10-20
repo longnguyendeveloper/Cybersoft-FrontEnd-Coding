@@ -1,5 +1,40 @@
-@media only screen and (max-width: 1024px){
-    h1{
+body {
+    background-color: orange;
+    display: flex;
+    height: 100vh;
+}
+/* @media only screen and (max-width: 1024px) {
+    h1 {
         color: red;
+    }
+} */
+
+.mobile,
+.tablet,
+.pc {
+    margin: auto;
+    font-size: 100px;
+    color: white;
+    display: none;
+}
+
+/* Mobile: width < 740px */
+@media only screen and (max-width: 739px) {
+    .mobile {
+        display: block;
+    }
+}
+
+/* Tablet: width: >= 740px and width: <1024px */
+@media only screen and (min-width: 740px) and (max-width: 1023px) {
+    .tablet{
+        display: block;
+    }
+}
+/* PC: width: >= 1024px */
+@media only screen and (min-width: 1024px) {
+    .pc{
+        display: block;
+
     }
 }

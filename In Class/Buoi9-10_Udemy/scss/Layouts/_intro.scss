@@ -1,0 +1,22 @@
+.intro{
+    background: linear-gradient(-45deg,#EC5252 0%,#6E1A52 100%);
+    height: 80px;
+
+}
+.intro__content {
+    text-align: left;
+    margin-left: 15%;
+    display: flex;
+    :first-child{
+        @include styleText($color-white-0, $fs-0+2px,$fw-bold-1)
+    }
+    :last-child{
+        @include styleText($color-white-0, $fs-0,$fw-normal)
+    }
+
+    .intro__sub-title{
+        margin-top: 15px;
+    }
+   
+    
+}

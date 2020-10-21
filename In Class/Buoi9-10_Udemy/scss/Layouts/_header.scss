@@ -65,13 +65,15 @@ header {
         .teach {
             display: none;
         }
+        .ud-btnGroup {
+            white-space: nowrap;
+        }
     }
 
     // phạm vi nhỏ hơn 768px
     @include responsive("medium") {
         .ud-btnGroup {
             display: none;
-            white-space: nowrap;
         }
     }
 }

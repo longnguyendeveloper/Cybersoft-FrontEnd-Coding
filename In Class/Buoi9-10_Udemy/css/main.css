@@ -111,12 +111,14 @@ header {
   .header__right .teach {
     display: none;
   }
+  .header__right .ud-btnGroup {
+    white-space: nowrap;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .header__right .ud-btnGroup {
     display: none;
-    white-space: nowrap;
   }
 }
 
@@ -188,5 +190,32 @@ header {
 
 .udCarousel .carousel__content .input-group-append:hover .fa {
   color: #ffffff !important;
+}
+
+.intro {
+  background: linear-gradient(-45deg, #EC5252 0%, #6E1A52 100%);
+  height: 80px;
+}
+
+.intro__content {
+  text-align: left;
+  margin-left: 15%;
+  display: flex;
+}
+
+.intro__content :first-child {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.intro__content :last-child {
+  color: #fff;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.intro__content .intro__sub-title {
+  margin-top: 15px;
 }
 /*# sourceMappingURL=main.css.map */

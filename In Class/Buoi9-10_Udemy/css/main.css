@@ -80,6 +80,10 @@ header {
   height: 44px;
 }
 
+.header__left .header__form .input-group-text.focused {
+  background-color: white;
+}
+
 .header__left .header__form .form-control:focus {
   background-color: #fff;
   box-shadow: none;

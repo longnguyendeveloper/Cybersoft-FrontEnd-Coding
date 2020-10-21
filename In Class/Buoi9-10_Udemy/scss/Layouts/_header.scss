@@ -23,7 +23,15 @@ header {
             @include box($color-white-cream, $bshadow-none, $border-none);
             width: 44px;
             height: 44px;
+
         }
+        .input-group-text.focused {
+            background-color: white;
+        }
+
+        // .input-group.focused{
+        //     border: 1px solid red;
+        // }
         .form-control:focus {
             @include box($color-white-0, $bshadow-none, $border-gray-1);
         }

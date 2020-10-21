@@ -1,14 +1,11 @@
 document.querySelector('input.form-control').onfocus = function () {
-    var inputGroupText = document.querySelector('span.input-group-text');
-    if (inputGroupText) {
-        inputGroupText.style.backgroundColor = 'white';
-    }
+    document.querySelector('span.input-group-text').classList.add('focused');
+    // document.querySelector('div.input-group').classList.add('focused');
 }
 
 document.querySelector('input.form-control').onfocusout = function () {
-    var inputGroupText = document.querySelector('span.input-group-text');
-    if (inputGroupText) {
-        inputGroupText.style.backgroundColor = '#f2f3f5';
-    }
+    document.querySelector('span.input-group-text').classList.remove('focused');
+    // document.querySelector('div.input-group').classList.remove('focused');
 }
+
 

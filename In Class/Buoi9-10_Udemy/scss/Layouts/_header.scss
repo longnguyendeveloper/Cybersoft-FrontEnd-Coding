@@ -28,9 +28,17 @@ header {
             @include box($color-white-0, $bshadow-none, $border-gray-1);
         }
 
-        // .form-control:focus .input-group-text{
-        //     @include box($color-white-0,$bshadow-none,$border-gray-1)
-        // }
+        .input-group-append:hover {
+            .input-group-append,
+            .input-group-text {
+                background-color: $color-red-0;
+            }
+
+            .fa {
+                color: $color-white-0 !important;
+            }
+        }
+
     }
 }
 
@@ -71,10 +79,10 @@ header {
     }
 }
 
-nav{
+nav {
     // phạm vi nhỏ hơn 768px
-    @include responsive("medium"){
-        i.fa.fa-bars{
+    @include responsive("medium") {
+        i.fa.fa-bars {
             padding-right: 20px;
         }
     }

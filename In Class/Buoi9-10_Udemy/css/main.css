@@ -86,6 +86,15 @@ header {
   border: #dedfe0;
 }
 
+.header__left .header__form .input-group-append:hover .input-group-append,
+.header__left .header__form .input-group-append:hover .input-group-text {
+  background-color: #ec5252;
+}
+
+.header__left .header__form .input-group-append:hover .fa {
+  color: #fff !important;
+}
+
 .header__right .nav-link {
   color: #505763;
   font-size: 13px;

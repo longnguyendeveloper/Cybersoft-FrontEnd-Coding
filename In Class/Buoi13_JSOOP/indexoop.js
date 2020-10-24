@@ -12,25 +12,26 @@ var sinhVien = {
         return dtb;
     },
 
-    xepLoaiSinhVien: function(){
+    xepLoaiSinhVien: function () {
+        var tinhDiemTrungBinh = this.diemTrungBinh();
         if (this.diemRenLuyen < 5) {
             return 'Yếu';
         }
         else {
-            if (this.diemTrungBinh() < 5) {
+            if (this.tinhDiemTrungBinh() < 5) {
                 return 'Yếu';
             }
-            else if (this.diemTrungBinh() >= 5 && this.diemTrungBinh() < 6) {
+            else if (this.tinhDiemTrungBinh() >= 5 && this.tinhDiemTrungBinh() < 6) {
                 return 'Trung bình';
-            } else if (this.diemTrungBinh() >= 6 && this.diemTrungBinh() < 7) {
+            } else if (this.tinhDiemTrungBinh() >= 6 && this.tinhDiemTrungBinh() < 7) {
                 return 'Trung bình-Khá';
-            } else if (this.diemTrungBinh() >= 7 && this.diemTrungBinh() < 8) {
+            } else if (this.tinhDiemTrungBinh() >= 7 && this.tinhDiemTrungBinh() < 8) {
                 return 'Khá';
             }
-            else if (this.diemTrungBinh() >= 8 && this.diemTrungBinh() < 9) {
+            else if (this.tinhDiemTrungBinh() >= 8 && this.tinhDiemTrungBinh() < 9) {
                 return 'Giỏi';
             }
-            else if (this.diemTrungBinh() >= 9 && this.diemTrungBinh() <= 10) {
+            else if (this.tinhDiemTrungBinh() >= 9 && this.tinhDiemTrungBinh() <= 10) {
                 return 'Xuất sắc';
             } else {
                 return 'Yếu';
@@ -55,11 +56,7 @@ document.querySelector('#btn-xacNhan').onclick = function () {
 
     sinhVien.diemRenLuyen = document.querySelector('#diemRenLuyen').value;
 
-    // tính điểm trung bình
-    var diemTrunBinh = sinhVien.diemTrungBinh();
-    console.log('diemTrungBinh', diemTrunBinh);
-
-
+    // gán id của html thành biến
     var texttenSinhVien = document.querySelector('#text-tenSinhVien');
     var textmaSinhVien = document.querySelector('#text-maSinhVien');
     var textloaiSinhVien = document.querySelector('#text-loaiSinhVien');

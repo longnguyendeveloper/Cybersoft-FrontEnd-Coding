@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<!-- ---------------------------------------- -->
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8 border border-primary py-2 ">
+                <h1 class="display-4 text-center bg-primary">QUẢN LÝ SINH VIÊN</h1>
+                <p>Mã sinh viên:</p>
+                <input class="form-control" id="maSinhVien">
+                <p>Tên sinh viên</p>
+                <input class="form-control" id="tenSinhVien">
+                <p>Loại sinh viên</p>
+                <div class="form-group">
+                    <select class="form-control" id="loaiSinhVien">
+                        <option>Loại sinh viên</option>
+                        <option>Bình thường</option>
+                        <option>Khó khăn</option>
+                    </select>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-4">
+                        <p>Điểm toán:</p>
+                        <input class="form-control" id="diemToan">
+                    </div>
+
+
+                    <div class="col-4">
+                        <p>Điểm lý</p>
+                        <input class="form-control" id="diemLy">
+                    </div>
+
+
+                    <div class="col-4">
+                        <p>Điểm hóa</p>
+                        <input class="form-control" id="diemHoa">
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p>Điểm rèn luyện</p>
+                    <input class="form-control" id="diemRenLuyen">
+                </div>
+                <div class="buttonXacNhan text-center">
+                    <button type="button" class="btn btn-success" id="btn-xacNhan">Xác nhận</button>
+                </div>
+            </div>
+
+            <div class="col-4 border border-primary py-2 bg-secondary">
+                <h1 class="display-4 text-center text-info">THÔNG TIN SINH VIÊN</h1>
+                <p>Tên sinh viên: <span class="text-info text-tenSinhVien" id="text-tenSinhVien"></span></p>
+
+                <p>Mã sinh viên: <span class="text-info text-maSinhVien" id="text-maSinhVien"></span></p>
+
+                <p>Loại sinh viên: <span class="text-info text-loaiSinhVien" id="text-loaiSinhVien"></span></p>
+
+                <p>Điểm trung bình: <span class="text-info text-trungBinh" id="text-trungBinh"></span></p>
+
+                <p>Xếp loại: <span class="text-info text-xlSinhVien" id="text-xlSinhVien"></span></p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------------------------------------- -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- <script src="./index.js"></script> -->
+    <script src="./indexoop.js"></script>
+</body>
+
+</html>

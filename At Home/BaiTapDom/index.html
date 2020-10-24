@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Tính diện tính - Chu Vi - Vẽ Hình</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- ======================================================================================== -->
+</head>
+
+<body>
+  <form>
+    <div>
+      <div class="card">
+        <div class="card">
+          <div class="card-header text-white bg-danger text-center font-weight-bold">
+            CHƯƠNG TRÌNH TÍNH DIỆN TÍCH - CHU VI - VẼ HÌNH
+          </div>
+
+          <div class="card-body row">
+            <div class="col-4 form-group">
+              <p>Nhập chiều dài:</p>
+              <input type="text" id="txtInputLength" class="form-control mb-3 w-50" required>
+              <p>Nhập chiều rộng:</p>
+              <input type="text" id="txtInputWidth" class="form-control w-50" required>
+              <button id="btnTinh" class="btn btn-danger bg-success mt-3">Tính & Vẽ hình</button>
+            </div>
+
+            <div class="col-4 form-group">
+              <p>Chu vi</p>
+              <input type="text" id="txtOutputChuVi" class="form-control mb-3 w-50" readonly>
+              <p>Diện tích</p>
+              <input type="text" id="txtOutputDienTich" class="form-control w-50" readonly>
+              </select>
+            </div>
+
+            <div class="col-4 form-group">
+              <p>Hình vẽ</p>
+
+              <div class="createImageByBackground" style="height:0;width:20%;padding-bottom:20%;background-color:red">
+                </div>
+
+              <div class="radioColor">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                    checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    Đỏ
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1"
+                    >
+                  <label class="form-check-label" for="exampleRadios2">
+                    Cam
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option1"
+                    >
+                  <label class="form-check-label" for="exampleRadios3">
+                    Lục
+                  </label>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

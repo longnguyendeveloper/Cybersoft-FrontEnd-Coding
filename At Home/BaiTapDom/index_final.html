@@ -13,60 +13,60 @@
 </head>
 
 <body>
-    <div class="container-fluit m-3">
-        <h1 class="text-center">CHƯƠNG TRÌNH TÍNH DIỆN TÍCH - CHU VI - VẼ HÌNH</h1>
+    <div class="container mt-3 border">
+        <h1 class="card text-center bg-danger">CHƯƠNG TRÌNH TÍNH DIỆN TÍCH - CHU VI - VẼ HÌNH</h1>
         <div class="row">
             <div class="col-4">
-                <p>Nhập chiều dài</p>
-                <input type="text" id="chieuDai">
-                <p>Nhập chiều rộng</p>
-                <input type="text" id="chieuRong">
-                <div>
-                    <button class="btn btn-success mt-3" id="btnTinh">Tính và Vẽ hình</button>
-                </div>
+                <form>
+                    <p>Nhập chiều dài</p>
+                    <input type="text" id="chieuDai" required />
+                    <p>Nhập chiều rộng</p>
+                    <input type="text" id="chieuRong" required />
+                    <div>
+                        <button class="btn btn-success my-3" id="btnTinh">Tính và Vẽ hình</button>
+                    </div>
+                </form>
+            </div>
 
-            </div>
             <div class="col-4">
-                <p>Chu vi: <span id="chuVi"></span></p>
-                <p>Diện tích: <span id="dienTich"></span></p>
+                <form>
+                    <p>Chu vi:</p>
+                    <input type="text" id="chuVi" readonly />
+                    <p>Diện tích:</p>
+                    <input type="text" id="dienTich" readonly />
+                </form>
             </div>
+
             <div class="col-4 form-group">
                 <p>Hình vẽ</p>
 
-                <div class="createImageByBackground" style="height:0;width:20%;padding-bottom:20%;background-color:red">
+                <div class="createImageByBackground" id="createImage">
                 </div>
                 <div class="radioColor d-flex">
                     <div class="form-check pr-3 ">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                            value="option1" checked>
-                        <label class="form-check-label" for="exampleRadios1">
+                        <input class="form-check-input" type="radio" name="radioColor" id="red" value="Red">
+                        <label class="form-check-label" for="red">
                             Đỏ
                         </label>
                     </div>
 
                     <div class="form-check pr-3">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
-                            value="option2">
-                        <label class="form-check-label" for="exampleRadios2">
+                        <input class="form-check-input" type="radio" name="radioColor" id="orange" value="Orange">
+                        <label class="form-check-label" for="orange">
                             Cam
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3"
-                            value="option3">
-                        <label class="form-check-label" for="exampleRadios3">
+                        <input class="form-check-input" type="radio" name="radioColor" id="blue" value="Blue">
+                        <label class="form-check-label" for="blue">
                             Lục
                         </label>
                     </div>
                 </div>
             </div>
-
         </div>
-
-
     </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

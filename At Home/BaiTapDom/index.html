@@ -16,65 +16,56 @@
 
 <body>
   <form>
-    <div>
+    <div class="container-fluid">
       <div class="card">
-        <div class="card">
-          <div class="card-header text-white bg-danger text-center font-weight-bold">
-            CHƯƠNG TRÌNH TÍNH DIỆN TÍCH - CHU VI - VẼ HÌNH
-          </div>
-
-          <div class="card-body row">
-            <div class="col-4 form-group">
-              <p>Nhập chiều dài:</p>
-              <input type="text" id="txtInputLength" class="form-control mb-3 w-50" required>
-              <p>Nhập chiều rộng:</p>
-              <input type="text" id="txtInputWidth" class="form-control w-50" required>
+        <div class="card-header text-white bg-danger text-center font-weight-bold">
+          CHƯƠNG TRÌNH TÍNH DIỆN TÍCH - CHU VI - VẼ HÌNH
+        </div>
+        <div class="card-body row">
+          <div class="col-4 form-group">
+            <p>Nhập chiều dài:</p>
+            <input type="text" id="txtInputLength" class="form-control mb-3 w-50">
+            <p>Nhập chiều rộng:</p>
+            <input type="text" id="txtInputWidth" class="form-control w-50">
+            <div>
               <button id="btnTinh" class="btn btn-danger bg-success mt-3">Tính & Vẽ hình</button>
             </div>
+          </div>
 
-            <div class="col-4 form-group">
-              <p>Chu vi</p>
-              <input type="text" id="txtOutputChuVi" class="form-control mb-3 w-50" readonly>
-              <p>Diện tích</p>
-              <input type="text" id="txtOutputDienTich" class="form-control w-50" readonly>
-              </select>
+          <div class="col-4 form-group">
+            <p>Chu vi: <span id="txtOutputChuVi"></span></p>
+            <p>Diện tích: <span id="txtOutputDienTich"></span></p>
+          </div>
+
+          <div class="col-4 form-group">
+            <p>Hình vẽ</p>
+
+            <div class="createImageByBackground" style="height:0;width:20%;padding-bottom:20%;background-color:red">
             </div>
+            <div class="radioColor d-flex">
+              <div class="form-check pr-3 ">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                  checked>
+                <label class="form-check-label" for="exampleRadios1">
+                  Đỏ
+                </label>
+              </div>
 
-            <div class="col-4 form-group">
-              <p>Hình vẽ</p>
+              <div class="form-check pr-3">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                  Cam
+                </label>
+              </div>
 
-              <div class="createImageByBackground" style="height:0;width:20%;padding-bottom:20%;background-color:red">
-                </div>
-
-              <div class="radioColor d-flex">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
-                    checked>
-                  <label class="form-check-label" for="exampleRadios1">
-                    Đỏ
-                  </label>
-                </div>
-
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option1"
-                    >
-                  <label class="form-check-label" for="exampleRadios2">
-                    Cam
-                  </label>
-                </div>
-
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option1"
-                    >
-                  <label class="form-check-label" for="exampleRadios3">
-                    Lục
-                  </label>
-                </div>
-
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                <label class="form-check-label" for="exampleRadios3">
+                  Lục
+                </label>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>

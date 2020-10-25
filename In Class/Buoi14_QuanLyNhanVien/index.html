@@ -21,18 +21,18 @@
                 <p>Mã nhân viên</p>
 
                 <div class="form-group">
-                    <input type="text" name="" id="" class="form-control">
+                    <input type="text" id="maNhanVien" class="form-control">
                 </div>
 
                 <p>Tên nhân viên</p>
 
                 <div class="form-group">
-                    <input type="text" name="" id="" class="form-control">
+                    <input type="text" id="tenNhanVien" class="form-control">
                 </div>
 
                 <p>Chức vụ</p>
                 <div class="form-group">
-                    <select class="form-control" id="">
+                    <select class="form-control" id="chucVu">
                         <option value="1">Nhân viên</option>
                         <option value="2">Quản lý</option>
                         <option value="3">Giám đốc</option>
@@ -42,18 +42,18 @@
                 <p>Lương cơ bản</p>
 
                 <div class="form-group">
-                    <input type="text" name="" id="" class="form-control">
+                    <input type="text" id="luongCoBan" class="form-control">
                 </div>
 
 
                 <p>Giờ làm trong tháng</p>
 
                 <div class="form-group">
-                    <input type="text" name="" id="" class="form-control">
+                    <input type="text" name="" id="soGioLamTrongThang" class="form-control">
                 </div>
 
                 <div class="btnHienThi text-center">
-                    <button class="btn btn-success">Hiển thị thông tin</button>
+                    <button class="btn btn-success" onclick="xuatThongTinNhanVien()">Hiển thị thông tin</button>
                 </div>
 
             </div>
@@ -64,7 +64,7 @@
                 <p>Tên nhân viên: <span class="text-info" id="text-tenNhanVien"></span></p>
                 <p>Mã nhân viên: <span class="text-info" id="text-maNhanVien"></span></p>
                 <p>Chức vụ: <span class="text-info" id="text-chucVu"></span></p>
-                <p>Tổng lương: <span class="text-info" id="text-tuongLuong"></span></p>
+                <p>Tổng lương: <span class="text-info" id="text-tongLuong"></span></p>
                 <p>Xếp loại trong tháng: <span class="text-info" id="text-xepLoai"></span></p>
             </div>
 
@@ -84,6 +84,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
     <div class="container-fluid">
         <div class="row p-2">
             <div class="col-8 border border-warning">
@@ -53,11 +52,9 @@
                 </div>
 
                 <div class="btnHienThi text-center">
-                    <button class="btn btn-success" onclick="xuatThongTinNhanVien()">Hiển thị thông tin</button>
+                    <button class="btn btn-success mb-3" onclick="xuatThongTinNhanVien()">Hiển thị thông tin</button>
                 </div>
-
             </div>
-
 
             <div class="col-4 border border-warning">
                 <h1 class="text-center">Thông tin nhân viên</h1>
@@ -67,11 +64,22 @@
                 <p>Tổng lương: <span class="text-info" id="text-tongLuong"></span></p>
                 <p>Xếp loại trong tháng: <span class="text-info" id="text-xepLoai"></span></p>
             </div>
-
         </div>
-
-
     </div>
+
+    <table class="table container-fuild table-striped">
+        <thead class="text-center">
+            <th>Mã nhân viên</th>
+            <th>Tên nhân viên</th>
+            <th>Chức vụ</th>
+            <th>Lương cơ bản</th>
+            <th>Tổng lương</th>
+            <th>Giờ làm/tháng</th>
+            <th>Xếp loại nhân viên</th>
+            <th>Chức năng</th>
+        </thead>
+        <tbody id="tableNhanVien" class="table text-center"></tbody>
+    </table>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

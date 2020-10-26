@@ -30,7 +30,6 @@ var nhanVien = {
     }
 }
 
-
 // CÁCH 1:  Định nghĩa sự kiện cho btnXacNhan ngoài DOM Query Selector . onclick
 // document.querySelector('#.btnXacNhan').onclick = function {
 // }
@@ -56,7 +55,7 @@ var xuatThongTinNhanVien = function () {
     // lấy ra mảng các thẻ option trong thẻ select;
     var arrOption = tagChucVu.options;
     // lấy thẻ option được chọn
-    nhanVien.chucVu = arrOption[tagChucVu.selectorIndex].innerHTML;
+    nhanVien.chucVu = arrOption[tagChucVu.selectedIndex].innerHTML;
     // console.log(nhanVien.chucVu);
     // console.log(tagChucVu.options);
 
@@ -69,5 +68,67 @@ var xuatThongTinNhanVien = function () {
 
     document.querySelector('#text-tongLuong').innerHTML = nhanVien.tongLuong();
     document.querySelector('#text-xepLoai').innerHTML = nhanVien.xepLoai();
+
+    // -----------------FUNCTION TABLE---------------------------
+    // tạo tr
+    var trNV = document.createElement('tr');
+
+    // tạo td
+    var tdMaNV = document.createElement('td');
+    tdMaNV.innerHTML = nhanVien.maNV;
+
+    var tdTenNV = document.createElement('td');
+    tdTenNV.innerHTML = nhanVien.tenNV;
+
+    var tdChucVu = document.createElement('td');
+    tdChucVu.innerHTML = nhanVien.chucVu;
+
+    var tdLuongCoBan = document.createElement('td');
+    tdLuongCoBan.innerHTML = nhanVien.luongCoBan;
+
+    var tdTongLuong = document.createElement('td');
+    tdTongLuong.innerHTML = nhanVien.tongLuong();
+
+    var tdGioLam = document.createElement('td');
+    tdGioLam.innerHTML = nhanVien.gioLamTrongThang;
+
+    var tdXepLoai = document.createElement('td');
+    tdXepLoai.innerHTML = nhanVien.xepLoai();
+
+
+    // tạo td chức năng
+    var tdChucNang = document.createElement('td');
+    
+    // tạo button xoá
+    var buttonXoa = document.createElement('button');
+    buttonXoa.innerHTML = 'Xoá';
+    buttonXoa.className = 'btn btn-danger';
+    
+    buttonXoa.onclick = function(){
+        this.parentElement.parentElement.remove();
+    }
+
+    // Add button xoá vào chức năng
+    tdChucNang.appendChild(buttonXoa);
+
+
+
+    // chèn thẻ td vào tr
+    trNV.appendChild(tdMaNV);
+    trNV.appendChild(tdTenNV);
+    trNV.appendChild(tdChucVu);
+    trNV.appendChild(tdLuongCoBan);
+    trNV.appendChild(tdTongLuong);
+    trNV.appendChild(tdGioLam);
+    trNV.appendChild(tdXepLoai);
+    trNV.appendChild(tdChucNang)
+
+    // chèn thẻ tr vào tbody
+    document.querySelector('#tableNhanVien').appendChild(trNV);
+
 }
+
+
+
+
 

@@ -218,4 +218,107 @@ header {
 .intro__content .intro__sub-title {
   margin-top: 15px;
 }
+
+.course {
+  padding: 100px 0;
+  margin: 0 auto;
+}
+
+.course .course__left {
+  background-color: #F7F8FA;
+  position: relative;
+}
+
+.course .course__left .left__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.course .course__left .left__content h3 {
+  color: #29303b;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.course .course__left .left__content p {
+  color: #29303b;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.course .course__right .course__contentright .course__tab {
+  border-bottom: 2px solid #cacbcc;
+  margin-bottom: 8px;
+}
+
+.course .course__right .course__contentright .course__tab .nav-pills .nav-link.active,
+.course .course__right .course__contentright .course__tab .nav-pills .show > .nav-link {
+  border-radius: 0;
+  border-bottom: 5px solid #007791;
+  color: #29303b;
+  font-size: 15px;
+  font-weight: normal;
+  background-color: transparent;
+}
+
+.course .course__right .course__contentright .course__tab .nav-link {
+  color: #29303b;
+  font-size: 15px;
+  font-weight: normal;
+  color: #29303b;
+  transition: all 0.5s;
+}
+
+.course .course__right .course__contentright .course__tab .nav-item:hover .nav-link {
+  color: #007791;
+}
+
+.course .course__right .course__contentright .course__big {
+  display: flex;
+}
+
+.course .course__right .course__contentright .course__big .course__item {
+  margin-right: 20px;
+  box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1);
+}
+
+.course .course__right .course__contentright .course__big .course__photo {
+  position: relative;
+}
+
+.course .course__right .course__contentright .course__big .course__photo img {
+  width: 100%;
+  height: auto;
+}
+
+.course .course__right .course__contentright .course__big .course__photo .course__badge {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  background-color: orange;
+  height: 20px;
+  width: 80px;
+  border: 1px solid orange;
+  border-radius: 0 10px 10px 0;
+}
+
+.course .course__right .course__contentright .course__big .course__photo .course__badge p {
+  line-height: 20px;
+  padding-left: 4px;
+  color: #29303b;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.course .course__right .course__contentright .course__big .course__detail {
+  padding: 12px;
+}
+
+.course .course__right .course__contentright .course__big .course__detail h3 {
+  color: #29303b;
+  font-size: 15px;
+  font-weight: bold;
+}
 /*# sourceMappingURL=main.css.map */

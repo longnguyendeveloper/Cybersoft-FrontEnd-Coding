@@ -277,6 +277,7 @@ header {
 
 .course .course__right .course__contentright .course__big {
   display: flex;
+  transition: all 0.5s;
 }
 
 .course .course__right .course__contentright .course__big .course__item {
@@ -320,5 +321,94 @@ header {
   color: #29303b;
   font-size: 15px;
   font-weight: bold;
+}
+
+.course .course__right .course__contentright .course__big .course__detail p.sub-title {
+  color: #686f7a;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.course .course__right .course__contentright .course__big .course__detail p.rating-star {
+  white-space: nowrap;
+}
+
+.course .course__right .course__contentright .course__big .course__detail p.rating-star i {
+  color: #F4C150;
+  font-size: 13px;
+  font-weight: 700;
+  margin-right: -1px;
+}
+
+.course .course__right .course__contentright .course__big .course__detail p.rating-star .rating-point {
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+.course .course__right .course__contentright .course__big .course__detail p.rating-star span:last-child {
+  color: #686f7a;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.course .course__right .course__contentright .course__big .course__detail .course__price {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.course .course__right .course__contentright .course__big .course__detail .course__price p:first-child {
+  color: #29303b;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.course .course__right .course__contentright .course__big .course__detail .course__price p:last-child {
+  text-decoration: line-through;
+  color: #505763;
+  font-size: 13px;
+  font-weight: normal;
+  margin-right: 12px;
+}
+
+.course .course__right .course__contentright .course__big:hover {
+  box-shadow: 0 2px 10px rgba(20, 23, 28, 0.2);
+}
+
+.course .course__right .course__contentright .course__big:hover .course__photo {
+  background-color: black;
+}
+
+.course .course__right .course__contentright .course__big:hover .course__photo img {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 1200px) {
+  .course .course__right .course__item {
+    max-width: 100%;
+  }
+  .course .course__right .last_course {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .course {
+    padding: 50px;
+  }
+  .course .course__left {
+    display: none;
+  }
+  .course .course__right {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .course .course__right {
+    margin: 0 auto;
+  }
+  .course .course__right .next_course {
+    display: none;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -89,7 +89,7 @@
                         @include styleText($color-black-0, $fs-0, $fw-bold);
                     }
                     p.sub-title {
-                        @include styleText($color-gray-4, $fs-1 - 1, $fw-light);
+                        @include styleText($color-gray-4, $fs-1 - 1, $fw-bold-0);
                     }
 
                     p.rating-star {
@@ -105,7 +105,7 @@
                         }
                         span {
                             &:last-child {
-                                @include styleText($color-gray-4, $fs-1 - 2, $fw-light);
+                                @include styleText($color-gray-4, $fs-1, $fw-bold-0);
                             }
                         }
                     }
@@ -143,5 +143,37 @@
     }
 }
 
-
 //------------- RESPONSIVE COURSE -------------
+
+.course {
+    @include responsive("extra-large") {
+        .course__right {
+            .course__item {
+                max-width: 100%;
+            }
+            .last_course {
+                display: none;
+            }
+        }
+    }
+
+    @include responsive("large") {
+        padding: 50px;
+        .course__left {
+            display: none;
+        }
+        .course__right {
+            margin: 0 auto;
+        }
+    }
+
+    @include responsive("medium") {
+        .course__right {
+            margin: 0 auto;
+
+            .next_course {
+                display: none;
+            }
+        }
+    }
+}

@@ -23,7 +23,6 @@ header {
             @include box($color-white-cream, $bshadow-none, $border-none);
             width: 44px;
             height: 44px;
-
         }
         .input-group-text.focused {
             background-color: white;
@@ -46,7 +45,6 @@ header {
                 color: $color-white-0 !important;
             }
         }
-
     }
 }
 

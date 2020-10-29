@@ -99,6 +99,10 @@ header {
   color: #fff !important;
 }
 
+.header__right .navbar-nav {
+  justify-content: flex-end;
+}
+
 .header__right .nav-link {
   color: #505763;
   font-size: 13px;
@@ -219,13 +223,17 @@ header {
   margin-top: 15px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .course {
   padding: 100px 0;
   margin: 0 auto;
 }
 
 .course .course__left {
-  background-color: #F7F8FA;
+  background-color: #f7f8fa;
   position: relative;
 }
 
@@ -334,7 +342,7 @@ header {
 }
 
 .course .course__right .course__contentright .course__big .course__detail p.rating-star i {
-  color: #F4C150;
+  color: #f4c150;
   font-size: 13px;
   font-weight: 700;
   margin-right: -1px;
@@ -382,6 +390,15 @@ header {
   opacity: 0.7;
 }
 
+@media screen and (max-width: 1440px) {
+  .course .course__right .course__item {
+    max-width: 100%;
+  }
+  .course .course__right .last_course {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .course .course__right .course__item {
     max-width: 100%;
@@ -426,7 +443,9 @@ header {
 
 .services .row .services__content {
   background-color: white;
-  margin: 0 20px;
-  padding: 0 20px;
+}
+
+.services .row .services__small {
+  width: 100%;
 }
 /*# sourceMappingURL=main.css.map */

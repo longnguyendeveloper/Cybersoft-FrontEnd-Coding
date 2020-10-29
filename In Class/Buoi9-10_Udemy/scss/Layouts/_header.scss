@@ -49,6 +49,9 @@ header {
 }
 
 .header__right {
+    .navbar-nav {
+        justify-content: flex-end;
+    }
     .nav-link {
         @include styleText($color-black-light, $fs-1, $fw-normal);
         padding-top: 1rem;

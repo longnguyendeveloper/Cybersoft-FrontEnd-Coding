@@ -1,0 +1,18 @@
+//------------- SERVICES -------------
+.services {
+    .row {
+        h4 {
+            @include styleText($color-black-0, $fs-2, $fw-bold-0);
+        }
+
+        p {
+            @include styleText($color-gray-2, $fs-0, $fw-normal);
+        }
+
+        .services__content {
+            background-color: white;
+            margin: 0 20px;
+            padding: 0 20px;
+        }
+    }
+}

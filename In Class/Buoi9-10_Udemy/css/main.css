@@ -223,10 +223,6 @@ header {
   margin-top: 15px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 .course {
   padding: 100px 0;
   margin: 0 auto;
@@ -429,6 +425,12 @@ header {
   }
 }
 
+.services .row {
+  margin-left: 400px;
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+
 .services .row h4 {
   color: #29303b;
   font-size: 20px;
@@ -441,11 +443,10 @@ header {
   font-weight: normal;
 }
 
-.services .row .services__content {
-  background-color: white;
-}
-
 .services .row .services__small {
-  width: 100%;
+  background-color: white;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  border: 1px solid #dedfe0;
 }
 /*# sourceMappingURL=main.css.map */

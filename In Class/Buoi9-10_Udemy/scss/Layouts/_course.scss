@@ -30,7 +30,6 @@
                 .nav-pills .nav-link.active,
                 .nav-pills .show > .nav-link {
                     border-radius: 0;
-
                     border-bottom: 5px solid $color-blue;
                     @include styleText($color-black-0, $fs-0, $fw-normal);
                     background-color: transparent;

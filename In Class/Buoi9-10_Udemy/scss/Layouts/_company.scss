@@ -1,0 +1,72 @@
+//------------- COMPANY -------------
+.company {
+    padding: 10px 0;
+    margin: auto;
+
+    text-align: center;
+    border-bottom: 1px solid $color-gray-2;
+
+    p{
+        @include styleText($color-black-light, $fs-0, $fw-light);
+        margin: 30px 0;
+
+    }
+
+    .company__list {
+        align-content: center;
+        margin: 0 auto;
+        width: 70%;
+        height: 40px;
+        justify-content: center;
+
+        img {
+            
+            margin: 0 10px;
+            
+        }
+    }
+    
+
+    .company__else {
+        display: flex;
+        margin: 20px auto;
+        padding: 50px auto;
+        align-items: center;
+
+        
+
+        .become_tutor{
+            padding: 30px 80px;
+            border-right: 1px solid $color-gray-2;
+
+            h4{
+                @include styleText($color-gray-4, $fs-2, $fw-bold);
+            }            
+            p{
+                @include styleText($color-black-light, $fs-1, $fw-light);
+            }
+            button {
+                margin: 8px;
+                padding: 10px 12px;
+            }
+        }
+        .udBusiness{
+            padding: 30px 80px;
+
+            h4{
+                @include styleText($color-gray-4, $fs-2, $fw-bold);
+            }            
+            p{
+                @include styleText($color-black-light, $fs-1, $fw-light);
+            }
+            button {
+                margin: 8px;
+                padding: 10px 12px;
+            }
+            
+        }
+
+        
+    }
+
+}

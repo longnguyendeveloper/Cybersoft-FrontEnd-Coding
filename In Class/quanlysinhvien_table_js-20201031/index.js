@@ -127,6 +127,14 @@ document.querySelector("#btnXacNhan").onclick = function () {
       ".kiemTraDinhDang-diemHoa"
     );
 
+  valid &= validation.kiemTraDoDaiChuoi(
+    sv.tenSinhVien,
+    "Tên sinh viên",
+    ".kiemTraDoDai-tenSinhVien",
+    6,
+    32
+  );
+
   if (!valid) {
     return;
   }
@@ -223,6 +231,17 @@ document.querySelector("#btnXacNhan").onclick = function () {
   mangSinhVien.push(sv);
   console.log("mảng sinh viên", mangSinhVien);
   renderTable(mangSinhVien);
+  // lưu vào localStorage
+  luuLocalStorage();
+};
+
+// Viết hàm lưu trữ dữ liệu xuống máy tính client
+
+var luuLocalStorage = function () {
+  // biến mảng sinh viên thành chuỗi
+  var sMangSinhVien = JSON.stringify(mangSinhVien);
+  // Đem chuỗi mangSinhVien lưu vào localstorage
+  localStorage.setItem("mangSinhVien", sMangSinhVien);
 };
 
 var renderTable = function (arrSV) {
@@ -231,22 +250,45 @@ var renderTable = function (arrSV) {
   for (var index = 0; index < arrSV.length; index++) {
     //Mỗi lần lặp lấy ra 1 đối tượng sinhVien
     var sv = arrSV[index];
+    var sinhVien = new SinhVien(
+      sv.maSinhVien,
+      sv.tenSinhVien,
+      sv.loaiSinhVien,
+      sv.email,
+      sv.soDienThoai,
+      sv.diemToan,
+      sv.diemLy,
+      sv.diemHoa,
+      sv.diemRenLuyen
+    );
+    // sinhVien.maSinhVien = sv.maSinhVien;
+    // sinhVien.tenSinhVien = sv.tenSinhVien;
+    // sinhVien.email = sv.email;
+    // sinhVien.soDienThoai = sv.soDienThoai;
+    // sinhVien.diemToan = sv.diemToan;
+    // sinhVien.diemLy = sv.diemLy;
+    // sinhVien.diemHoa = sv.diemHoa;
+    // sinhVien.diemRenLuyen = sv.diemRenLuyen;
+    // sinhVien.loaiSinhVien = sv.loaiSinhVien;
     //Tạo ra 1 chuỗi + dồn vào nội dung <tr></tr>
     noiDungTable += `
                 <tr>
-                    <td>${sv.maSinhVien}</td>
-                    <td>${sv.tenSinhVien}</td>
-                    <td>${sv.email}</td>
-                    <td>${sv.soDienThoai}</td>
-                    <td>${sv.tinhDiemTrungBinh()}</td>
-                    <td>${sv.xepLoai()}</td>
+                    <td>${sinhVien.maSinhVien}</td>
+                    <td>${sinhVien.tenSinhVien}</td>
+                    <td>${sinhVien.email}</td>
+                    <td>${sinhVien.soDienThoai}</td>
+                    <td>${sinhVien.tinhDiemTrungBinh()}</td>
+                    <td>${sinhVien.xepLoai()}</td>
                     <td><button class="btn btn-danger" onclick="xoaSinhVien('${
-                      sv.maSinhVien
+                      sinhVien.maSinhVien
                     }')">Xóa</button></td>
+                    <td><button class="btn btn-primary" onclick="chinhSua('${
+                      sinhVien.maSinhVien
+                    }')">Chỉnh sửa</button></td>
                 </tr>            
         `;
   }
-  console.log(noiDungTable);
+  // console.log(noiDungTable);
   document.querySelector("#tableSinhVien").innerHTML = noiDungTable;
 };
 
@@ -254,7 +296,7 @@ var renderTable = function (arrSV) {
 var xoaSinhVien = function (maSinhVien) {
   //   alert(maSinhVien);
 
-  for (var i = 0; i < mangSinhVien.length; i++) {
+  for (var i = mangSinhVien.length - 1; i >= 0; i--) {
     //   mỗi lần duyện lấy ra 1 đối tượng sinh viên
     var sv = mangSinhVien[i];
 
@@ -266,4 +308,81 @@ var xoaSinhVien = function (maSinhVien) {
   }
   //   Sau khi xoá dữ liệu trong mảng gọi hàm tạo lại table truyền vào mảng sinh viên đã xoá
   renderTable(mangSinhVien);
+};
+
+// Viết chức năng cho nút chỉnh sửa - table
+var chinhSua = function (maSV) {
+  document.querySelector("#maSinhVien").disabled = true;
+  // alert(maSV);
+  // Từ mã sinh viên => tìm sinh viên trong mangSinhVien
+  for (var index = 0; index < mangSinhVien.length; index++) {
+    // Mỗi lần duyệt mảng lấy ra 1 đối tượng sinh viên
+    var sv = mangSinhVien[index];
+
+    // so sánh nếu maSV truyền vào === với dối tượng đang duyệt => gán ngược lại lên các control phía trên
+    if (maSV === sv.maSinhVien) {
+      document.querySelector("#maSinhVien").value = sv.maSinhVien;
+      document.querySelector("#tenSinhVien").value = sv.tenSinhVien;
+      document.querySelector("#email").value = sv.email;
+      document.querySelector("#soDienThoai").value = sv.soDienThoai;
+      document.querySelector("#loaiSinhVien").value = sv.loaiSinhVien;
+      document.querySelector("#diemToan").value = sv.diemToan;
+      document.querySelector("#diemLy").value = sv.diemLy;
+      document.querySelector("#diemHoa").value = sv.diemHoa;
+      document.querySelector("#diemRenLuyen").value = sv.diemRenLuyen;
+    }
+  }
+};
+
+// Viết phương thức lấy dữ liệu từ localstorage => khi người dùng vừa vào trang web
+var layMangSinhVienStorage = function () {
+  // kiểm tra dữ liệu có trong localstorage không
+  if (localStorage.getItem("mangSinhVien")) {
+    // lấy dữ liệu được lưu trong localstorage ra ngoài
+    var sMangSinhVien = localStorage.getItem("mangSinhVien");
+    // biến dữ liệu từ chuỗi chuyển về object javascript gán vào mangSinhVien
+    mangSinhVien = JSON.parse(sMangSinhVien);
+    // sau khi lấy dữ leeiuj ra gọi hàm tạo bảng
+    renderTable(mangSinhVien);
+  }
+};
+
+layMangSinhVienStorage();
+
+// cập nhật thông tin người dùng
+
+document.querySelector("#btnLuuThongTin").onclick = function () {
+  // Lấy thông tin người dùng sau khi thay đổi gán vào đối tượng sinhVien
+  var sv = new SinhVien();
+  sv.maSinhVien = document.querySelector("#maSinhVien").value;
+  sv.tenSinhVien = document.querySelector("#tenSinhVien").value;
+  sv.loaiSinhVien = document.querySelector("#loaiSinhVien").value;
+  sv.diemToan = document.querySelector("#diemToan").value;
+  sv.diemLy = document.querySelector("#diemLy").value;
+  sv.diemHoa = document.querySelector("#diemHoa").value;
+  sv.diemRenLuyen = document.querySelector("#diemRenLuyen").value;
+  sv.email = document.querySelector("#email").value;
+  sv.soDienThoai = document.querySelector("#soDienThoai").value;
+
+  // Tìm trong mangSinhVien đối tượng cùng mã => cập nhật lại giá trị
+  for (var i = 0; i < mangSinhVien.length; i++) {
+    var sinhVienCapNhat = mangSinhVien[i];
+
+    // Tìm ra sinhVien trong mảng có mã = với mã sv trên giao diện => cập nhật giá trị
+    if (sinhVienCapNhat.maSinhVien === sv.maSinhVien) {
+      sinhVienCapNhat.maSinhVien = sv.maSinhVien;
+      sinhVienCapNhat.tenSinhVien = sv.tenSinhVien;
+      sinhVienCapNhat.loaiSinhVien = sv.loaiSinhVien;
+      sinhVienCapNhat.diemToan = sv.diemToan;
+      sinhVienCapNhat.diemHoa = sv.diemHoa;
+      sinhVienCapNhat.diemLy = sv.diemLy;
+      sinhVienCapNhat.diemRenLuyen = sv.diemRenLuyen;
+      sinhVienCapNhat.email = sv.email;
+      sinhVienCapNhat.soDienThoai = sv.soDienThoai;
+    }
+  }
+  // gọi hàm tạo bảng
+  renderTable(mangSinhVien);
+  // gọi hàm lưu vào localstorage
+  luuLocalStorage();
 };

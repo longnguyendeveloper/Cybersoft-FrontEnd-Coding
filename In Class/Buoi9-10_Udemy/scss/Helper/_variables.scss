@@ -11,6 +11,7 @@ $color-gray-3: #cacbcc;
 $color-gray-4: #686f7a;
 $color-gray-5: #f7f8fa;
 $color-gray-6: #dedfe0;
+$color-black: #29303b;
 $color-black-light: #505763;
 $color-white-cream: #f2f3f5;
 $color-black-dark: rgba(20, 23, 28, 0.1);
@@ -43,15 +44,16 @@ $line-height-0: 1.43; //default
 $fw-normal: normal;
 $fw-bold-0: 600;
 $fw-bold-1: 700;
+$fw-bold-2: 400;
 $fw-bold: bold;
 //variable box-shadow
 $bshadow-none: none;
 //break points
 // Kích thước màn hình
 $breakpoints: (
-    "xlextra-large": 1440px,
-    "extra-large": 1200px,
-    "large": 992px,
-    "medium": 768px,
-    "small": 576px,
+  "xlextra-large": 1440px,
+  "extra-large": 1200px,
+  "large": 992px,
+  "medium": 768px,
+  "small": 576px,
 );

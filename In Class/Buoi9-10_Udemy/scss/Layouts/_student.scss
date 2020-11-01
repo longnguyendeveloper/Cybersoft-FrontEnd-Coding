@@ -1,5 +1,95 @@
 .students {
-    padding: 100px 0;
-    margin: 0 auto;
+  margin: 0 auto;
+  padding-top: 20px;
+  p {
+    @include styleText($color-gray-4, $fs-2, $fw-bold-2);
+  }
 
+  .course__big {
+    display: flex;
+
+    .course__item {
+      margin-right: 20px;
+      box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1);
+    }
+
+    .course__photo {
+      position: relative;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      .course__badge {
+        position: absolute;
+        top: 20%;
+        left: 0;
+        background-color: orange;
+        height: 20px;
+        width: 80px;
+        border: 1px solid orange;
+        border-radius: 0 10px 10px 0;
+        p {
+          line-height: 20px;
+          padding-left: 4px;
+          @include styleText($color-black-0, $fs-1 - 3px, $fw-bold);
+        }
+      }
+    }
+
+    .course__detail {
+      padding: 12px;
+      h3 {
+        @include styleText($color-black-0, $fs-0, $fw-bold);
+      }
+      p.sub-title {
+        @include styleText($color-gray-4, $fs-1 - 1px, $fw-bold-0);
+      }
+
+      p.rating-star {
+        white-space: nowrap;
+
+        i {
+          @include styleText($color-yellow, $fs-1, $fw-bold-1);
+          margin-right: -1px;
+        }
+        .rating-point {
+          font-weight: $fw-bold-1;
+          margin-left: 4px;
+        }
+        span {
+          &:last-child {
+            @include styleText($color-gray-4, $fs-1, $fw-bold-0);
+          }
+        }
+      }
+
+      .course__price {
+        display: flex;
+        flex-direction: row-reverse;
+
+        p {
+          &:first-child {
+            @include styleText($color-black-0, $fs-2, $fw-bold-1);
+          }
+          &:last-child {
+            text-decoration: line-through;
+            @include styleText($color-black-light, $fs-1, $fw-normal);
+            margin-right: 12px;
+          }
+        }
+      }
+    }
+
+    transition: all 0.5s;
+
+    &:hover {
+      box-shadow: 0 2px 10px rgba(20, 23, 28, 0.2);
+      .course__photo {
+        background-color: black;
+        img {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
 }

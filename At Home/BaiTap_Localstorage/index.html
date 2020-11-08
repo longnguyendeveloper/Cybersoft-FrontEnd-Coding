@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row p-2">
+            <div class="col-8 border border-warning">
+                <h1 class="text-center">Quản lý nhân viên</h1>
+                <p>Mã nhân viên</p>
+                <div class="form-group">
+                    <input type="text" id="maNhanVien" class="form-control">
+                    <p class="text-danger kiemTraRong-maNhanVien"></p>
+                </div>
+
+                <p>Tên nhân viên</p>
+                <div class="form-group">
+                    <input type="text" id="tenNhanVien" class="form-control">
+                    <p class="text-danger kiemTraRong-tenNhanVien"></p>
+                </div>
+
+                <p>Chức vụ</p>
+                <div class="form-group">
+                    <select class="form-control" id="chucVu">
+                        <option value="1">Nhân viên</option>
+                        <option value="2">Quản lý</option>
+                        <option value="3">Giám đốc</option>
+                    </select>
+                </div>
+
+                <p>Lương cơ bản</p>
+                <div class="form-group">
+                    <input type="text" id="luongCoBan" class="form-control">
+                    <p class="text-danger kiemTraRong-luongCoBan"></p>
+                </div>
+
+
+                <p>Giờ làm trong tháng</p>
+                <div class="form-group">
+                    <input type="text" name="" id="soGioLamTrongThang" class="form-control">
+                    <p class="text-danger kiemTraRong-soGioLamTrongThang"></p>
+                </div>
+
+                <div class="btnHienThi text-center">
+                    <button id="btnXacNhan" class="btn btn-success mb-3">Hiển thị thông tin</button>
+                </div>
+            </div>
+
+            <div class="col-4 border border-warning">
+                <h1 class="text-center">Thông tin nhân viên</h1>
+                <p>Tên nhân viên: <span class="text-info" id="text-tenNhanVien"></span></p>
+                <p>Mã nhân viên: <span class="text-info" id="text-maNhanVien"></span></p>
+                <p>Chức vụ: <span class="text-info" id="text-chucVu"></span></p>
+                <p>Tổng lương: <span class="text-info" id="text-tongLuong"></span></p>
+                <p>Xếp loại trong tháng: <span class="text-info" id="text-xepLoai"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <table class="table container-fuild table-striped">
+        <thead class="text-center">
+            <th>Mã nhân viên</th>
+            <th>Tên nhân viên</th>
+            <th>Chức vụ</th>
+            <th>Lương cơ bản</th>
+            <th>Tổng lương</th>
+            <th>Giờ làm/tháng</th>
+            <th>Xếp loại nhân viên</th>
+            <th>Chức năng</th>
+        </thead>
+        <tbody id="tableNhanVien" class="table text-center"></tbody>
+    </table>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="./js/Validation.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

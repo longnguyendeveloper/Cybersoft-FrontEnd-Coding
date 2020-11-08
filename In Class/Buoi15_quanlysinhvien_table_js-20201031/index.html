@@ -37,12 +37,12 @@
                     <p class="text-danger kiemTraRong-email"></p>
                     <p class="text-danger kiemTraDinhDang-email"></p>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <p>Số điện thoại</p>
                     <input class="form-control" id="soDienThoai" />
                     <p class="text-danger kiemTraRong-soDienThoai"></p>
                     <p class="text-danger kiemTraDinhDang-soDienThoai"></p>
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <p>Loại sinh viên</p>
@@ -97,7 +97,7 @@
                     <th>Mã sinh viên</th>
                     <th>Tên sinh viên</th>
                     <th>Email</th>
-                    <th>Số điện thoại</th>
+                    <!-- <th>Số điện thoại</th> -->
                     <th>Điểm trung bình</th>
                     <th>Xếp loại</th>
                     <th></th>
@@ -116,10 +116,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+    <!-- dùng ajax để kết nối backend API -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+
+    <!-- nhúng file service trước index -->
+    <script src="./services/SinhVienService.js"></script>
+
     <!--Class (Prototype) SinhVien phải được chèn vào trước index -->
-    <script src="./Validation.js"></script>
-    <script src="./SinhVien.js"></script>
-    <script src="./index.js"></script>
+    <script src=" ./models/Validation.js"></script>
+    <script src="./models/SinhVien.js"></script>
+    <script src="./controllers/indexAjax.js"></script>
+    <!-- <script src="./controllers/index.js"></script> -->
 </body>
 
 </html>

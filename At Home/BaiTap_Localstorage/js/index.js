@@ -1,0 +1,160 @@
+// Tạo ra 1 biến gồm 6 thuộc tính để lưu trữ thông tin
+var mangNhanVien = [];
+// var nhanVien = {
+//   maNV: "",
+//   tenNV: "",
+//   chucVu: "",
+//   heSoChucVu: "",
+//   luongCoBan: "",
+//   gioLamTrongThang: "",
+
+//   tongLuong: function () {
+//     var tluong = Number(this.luongCoBan) * Number(this.heSoChucVu);
+//     return tluong;
+//   },
+
+//   xepLoai: function () {
+//     if (this.gioLamTrongThang > 50 && this.gioLamTrongThang <= 80) {
+//       return "Trung bình";
+//     } else if (this.gioLamTrongThang > 80 && this.gioLamTrongThang <= 100) {
+//       return "Khá";
+//     } else if (this.gioLamTrongThang > 100 && this.gioLamTrongThang <= 120) {
+//       return "Giỏi";
+//     } else if (this.gioLamTrongThang > 120) {
+//       return "Xuất sắc";
+//     } else {
+//       return "Lười vãi!";
+//     }
+//   },
+// };
+
+// CÁCH 1:  Định nghĩa sự kiện cho btnXacNhan ngoài DOM Query Selector . onclick
+// document.querySelector('#.btnXacNhan').onclick = function {
+// }
+
+// CÁCH 2: -> qua HTML thêm onclick vào trong btnXacNhan sau đó gọi hàm
+/*
+<div class="form-group text-center">
+  <button id="btnXacNhan" onclick="xuatThongTinNhanVien()" class="btn btn-info p-2">Xác Nhận</button>
+</div>
+*/
+
+document.querySelector("#hienThi").onclick = function () {
+  var nv = new NhanVien();
+  //Lấy thông tin người dùng nhập vào gán vào đối tượng Nhân Viên
+  nv.maNhanVien = document.querySelector("#maNhanVien").value;
+  nv.tenNhanVien = document.querySelector("#tenNhanVien").value;
+  nv.heSoChucVu = document.querySelector("#chucVu").value;
+  nv.luongCoBan = document.querySelector("#luongCoBan").value;
+  nv.gioLamTrongThang = document.querySelector("#soGioLamTrongThang").value;
+  // console.log(nhanVien);
+
+  // lấy innerHTML của option được chọn trong thẻ select
+  var tagChucVu = document.getElementById("chucVu");
+  // lấy ra mảng các thẻ option trong thẻ select;
+  var arrOption = tagChucVu.options;
+  // lấy thẻ option được chọn
+  nv.chucVu = arrOption[tagChucVu.selectedIndex].innerHTML;
+  // console.log(nhanVien.chucVu);
+  // console.log(tagChucVu.options);
+
+  // Hiển thị ra bên phải màn hình
+  document.querySelector("#text-maNhanVien").innerHTML = nv.maNhanVien;
+  document.querySelector("#text-tenNhanVien").innerHTML = nv.tenNhanVien;
+  document.querySelector("#text-chucVu").innerHTML = nv.chucVu;
+
+  // Tổng lương
+  document.querySelector("#text-tongLuong").innerHTML = nv.tongLuong();
+  document.querySelector("#text-xepLoai").innerHTML = nv.xepLoai();
+
+  //   // -----------------FUNCTION TABLE---------------------------
+  //   // tạo tr
+  //   var trNV = document.createElement("tr");
+
+  //   // tạo td
+  //   var tdMaNV = document.createElement("td");
+  //   tdMaNV.innerHTML = nhanVien.maNV;
+
+  //   var tdTenNV = document.createElement("td");
+  //   tdTenNV.innerHTML = nhanVien.tenNV;
+
+  //   var tdChucVu = document.createElement("td");
+  //   tdChucVu.innerHTML = nhanVien.chucVu;
+
+  //   var tdLuongCoBan = document.createElement("td");
+  //   tdLuongCoBan.innerHTML = nhanVien.luongCoBan;
+
+  //   var tdTongLuong = document.createElement("td");
+  //   tdTongLuong.innerHTML = nhanVien.tongLuong();
+
+  //   var tdGioLam = document.createElement("td");
+  //   tdGioLam.innerHTML = nhanVien.gioLamTrongThang;
+
+  //   var tdXepLoai = document.createElement("td");
+  //   tdXepLoai.innerHTML = nhanVien.xepLoai();
+
+  //   // tạo td chức năng
+  //   var tdChucNang = document.createElement("td");
+
+  //   // tạo button xoá
+  //   var buttonXoa = document.createElement("button");
+  //   buttonXoa.innerHTML = "Xoá";
+  //   buttonXoa.className = "btn btn-danger";
+
+  //   buttonXoa.onclick = function () {
+  //     this.parentElement.parentElement.remove();
+  //   };
+
+  //   // Add button xoá vào chức năng
+  //   tdChucNang.appendChild(buttonXoa);
+
+  //   // chèn thẻ td vào tr
+  //   trNV.appendChild(tdMaNV);
+  //   trNV.appendChild(tdTenNV);
+  //   trNV.appendChild(tdChucVu);
+  //   trNV.appendChild(tdLuongCoBan);
+  //   trNV.appendChild(tdTongLuong);
+  //   trNV.appendChild(tdGioLam);
+  //   trNV.appendChild(tdXepLoai);
+  //   trNV.appendChild(tdChucNang);
+
+  //   // chèn thẻ tr vào tbody
+  //   document.querySelector("#tableNhanVien").appendChild(trNV);
+
+
+  // CÁCH 2: render table
+  var renderTable = function (arrNV) {
+    // Từ mảng nhân viên tạo ra 1 chuỗi html nhiều thẻ tr dựa vào vòng lặp
+    var noiDungTable = "";
+    for (var i = 0; i < arrNV.length; i++) {
+      // Mỗi lần lặp lấy ra 1 đối tượng nhân viên
+      var nv = arrNV[i];
+      var nhanVien = new NhanVien(
+        nv.maNhanVien,
+        nv.tenNhanVien,
+        nv.chucVu,
+        nv.heSoChucVu,
+        nv.luongCoBan,
+        nv.gioLamTrongThang
+      );
+
+      // tạo ra 1 chuỗi + dồn vào nội dung <tr></tr>
+      noiDungTable += `
+      <tr>
+      <td>${nhanVien.maNhanVien}</td>
+      <td>${nhanVien.tenNhanVien}</td>
+      <td>${nhanVien.chucVu}</td>
+      <td>${nhanVien.luongCoBan}</td>
+      <td>${nhanVien.tongLuong()}</td>
+      <td>${nhanVien.gioLamTrongThang}</td>
+      <td>${nhanVien.xepLoai()}</td>
+      <td><button class="btn btn-danger" onclick="xoaNhanVien('${
+        nhanVien.maNhanVien
+      }')">Xóa</button></td>
+      </tr>
+      `;
+    }
+  };
+  console.log(noiDungTable);
+  document.querySelector("#tableNhanVien").innerHTML = noiDungTable;
+};

@@ -19,7 +19,7 @@ var mangNhanVien = [];
 //     } else if (this.gioLamTrongThang > 80 && this.gioLamTrongThang <= 100) {
 //       return "Khá";
 //     } else if (this.gioLamTrongThang > 100 && this.gioLamTrongThang <= 120) {
-//       return "Giỏi";
+//       return "Giỏi";s
 //     } else if (this.gioLamTrongThang > 120) {
 //       return "Xuất sắc";
 //     } else {
@@ -40,6 +40,7 @@ var mangNhanVien = [];
 */
 
 document.querySelector("#hienThi").onclick = function () {
+  // alert()
   var nv = new NhanVien();
   //Lấy thông tin người dùng nhập vào gán vào đối tượng Nhân Viên
   nv.maNhanVien = document.querySelector("#maNhanVien").value;
@@ -121,40 +122,69 @@ document.querySelector("#hienThi").onclick = function () {
   //   // chèn thẻ tr vào tbody
   //   document.querySelector("#tableNhanVien").appendChild(trNV);
 
-
   // CÁCH 2: render table
-  var renderTable = function (arrNV) {
-    // Từ mảng nhân viên tạo ra 1 chuỗi html nhiều thẻ tr dựa vào vòng lặp
-    var noiDungTable = "";
-    for (var i = 0; i < arrNV.length; i++) {
-      // Mỗi lần lặp lấy ra 1 đối tượng nhân viên
-      var nv = arrNV[i];
-      var nhanVien = new NhanVien(
-        nv.maNhanVien,
-        nv.tenNhanVien,
-        nv.chucVu,
-        nv.heSoChucVu,
-        nv.luongCoBan,
-        nv.gioLamTrongThang
-      );
 
-      // tạo ra 1 chuỗi + dồn vào nội dung <tr></tr>
-      noiDungTable += `
-      <tr>
-      <td>${nhanVien.maNhanVien}</td>
-      <td>${nhanVien.tenNhanVien}</td>
-      <td>${nhanVien.chucVu}</td>
-      <td>${nhanVien.luongCoBan}</td>
-      <td>${nhanVien.tongLuong()}</td>
-      <td>${nhanVien.gioLamTrongThang}</td>
-      <td>${nhanVien.xepLoai()}</td>
-      <td><button class="btn btn-danger" onclick="xoaNhanVien('${
-        nhanVien.maNhanVien
-      }')">Xóa</button></td>
-      </tr>
-      `;
-    }
+  //   xepLoai: function () {
+  mangNhanVien.push(nv);
+
+  var luuLocalStorage = function () {
+    // biến mảng sinh viên thành chuỗi
+    var sMangNhanVien = JSON.stringify(mangNhanVien);
+    // Đem chuỗi mangSinhVien lưu vào localstorage
+    localStorage.setItem("mangNhanVien", sMangNhanVien);
   };
+
+  // renderTable(mangNhanVien);
+  luuLocalStorage();
+  renderTable(mangNhanVien);
+};
+
+var renderTable = function (arrNV) {
+  // Từ mảng nhân viên tạo ra 1 chuỗi html nhiều thẻ tr dựa vào vòng lặp
+  var noiDungTable = "";
+  for (var i = 0; i < arrNV.length; i++) {
+    // Mỗi lần lặp lấy ra 1 đối tượng nhân viên
+    var nv = arrNV[i];
+    var nhanVien = new NhanVien(
+      nv.maNhanVien,
+      nv.tenNhanVien,
+      nv.chucVu,
+      nv.heSoChucVu,
+      nv.luongCoBan,
+      nv.gioLamTrongThang
+    );
+
+    // tạo ra 1 chuỗi + dồn vào nội dung <tr></tr>
+    noiDungTable += `
+    <tr>
+    <td>${nhanVien.maNhanVien}</td>
+    <td>${nhanVien.tenNhanVien}</td>
+    <td>${nhanVien.chucVu}</td>
+    <td>${nhanVien.luongCoBan}</td>
+    <td>${nhanVien.tongLuong()}</td>
+    <td>${nhanVien.gioLamTrongThang}</td>
+    <td>${nhanVien.xepLoai()}</td>
+    <td><button class="btn btn-danger" onclick="xoaNhanVien('${
+      nhanVien.maNhanVien
+    }')">Xóa</button></td>
+    </tr>
+    `;
+  }
   console.log(noiDungTable);
   document.querySelector("#tableNhanVien").innerHTML = noiDungTable;
 };
+
+// Viết phương thức lấy dữ liệu từ localstorage => khi người dùng vừa vào trang web
+var layMangNhanVienStorage = function () {
+  // kiểm tra dữ liệu có trong localstorage không
+  if (localStorage.getItem("mangNhanVien")) {
+    // lấy dữ liệu được lưu trong localstorage ra ngoài
+    var sMangNhanVien = localStorage.getItem("mangNhanVien");
+    // biến dữ liệu từ chuỗi chuyển về object javascript gán vào mangSinhVien
+    mangNhanVien = JSON.parse(sMangNhanVien);
+    // sau khi lấy dữ leeiuj ra gọi hàm tạo bảng
+    renderTable(mangNhanVien);
+  }
+};
+
+layMangNhanVienStorage();

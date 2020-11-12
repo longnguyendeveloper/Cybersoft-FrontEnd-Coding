@@ -26,4 +26,24 @@ var Validation = function () {
     document.querySelector(selectorError).innerHTML = "";
     return true;
   };
+
+  this.kiemTraGiaTri = function (value, name, selectorError, min, max) {
+    if (value < min || value > max) {
+      document.querySelector(selectorError).innerHTML =
+        name + ` phải nằm trong khoảng ${min} và ${max}`;
+      return false;
+    }
+    document.querySelector(selectorError).innerHTML = "";
+    return true;
+  };
+
+  this.kiemTraRong = function (value, name, selectorError) {
+    if (value.trim() === "") {
+      document.querySelector(selectorError).innerHTML =
+        name + " không được bỏ trống!";
+      return false;
+    }
+    document.querySelector(selectorError).innerHTML = "";
+    return true;
+  };
 };

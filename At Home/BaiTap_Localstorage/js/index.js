@@ -50,6 +50,33 @@ document.querySelector("#hienThi").onclick = function () {
     6
   );
 
+  valid &=
+    validation.kiemTraGiaTri(
+      nv.luongCoBan,
+      "Lương cơ bản",
+      ".kiemTraGiaTri-luongCoBan",
+      10000000,
+      20000000
+    ) &
+    validation.kiemTraGiaTri(
+      nv.gioLamTrongThang,
+      "Giờ làm",
+      ".kiemTraGiaTri-gioLamTrongThang",
+      50,
+      150
+    );
+
+  valid &=
+    validation.kiemTraRong(
+      nv.maNhanVien,
+      "Mã nhân viên",
+      ".kiemTraRong-maNhanVien"
+    ) &
+    validation.kiemTraRong(
+      nv.tenNhanVien,
+      "Tên nhân viên",
+      ".kiemTraRong-tenNhanVien"
+    );
   if (!valid) {
     return;
   }

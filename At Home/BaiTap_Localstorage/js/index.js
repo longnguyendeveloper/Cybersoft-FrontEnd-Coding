@@ -1,5 +1,6 @@
 // Tạo ra 1 biến gồm 6 thuộc tính để lưu trữ thông tin
 var mangNhanVien = [];
+var validation = new Validation();
 
 document.querySelector("#hienThi").onclick = function () {
   // alert()

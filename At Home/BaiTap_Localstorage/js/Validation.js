@@ -24,7 +24,6 @@ var Validation = function () {
       return false;
     }
     document.querySelector(selectorError).innerHTML = "";
-
     return true;
   };
 };

@@ -30,12 +30,8 @@ document.querySelector("#hienThi").onclick = function () {
   document.querySelector("#text-tongLuong").innerHTML = nv.tongLuong();
   document.querySelector("#text-xepLoai").innerHTML = nv.xepLoai();
 
-  //   xepLoai: function () {
-  mangNhanVien.push(nv);
-
   //------------- Validation Function-----------
   var valid = true;
-
   valid &= validation.kiemTraTatCaKyTu(
     nv.tenNhanVien,
     "Tên nhân viên",
@@ -80,7 +76,7 @@ document.querySelector("#hienThi").onclick = function () {
   if (!valid) {
     return;
   }
-
+  mangNhanVien.push(nv);
   var luuLocalStorage = function () {
     // biến mảng sinh viên thành chuỗi
     var sMangNhanVien = JSON.stringify(mangNhanVien);

@@ -19,7 +19,7 @@ var NhanVien = function (maNV, tenNV, cVu, heSoCV, luongCB, gioLTT) {
     } else if (this.gioLamTrongThang > 120) {
       return "Xuất sắc";
     } else {
-      return "Lười vãi!";
+      return "Kém!";
     }
   };
 };

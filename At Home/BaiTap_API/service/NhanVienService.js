@@ -1,4 +1,4 @@
-var NhanVienService = () => {
+var NhanVienService = function () {
   this.layDanhSachNhanVien = () => {
     var promise = axios({
       url: "http://svcy.myclass.vn/api/QuanLyNhanVienApi/LayDanhSachNhanVien",
@@ -26,10 +26,10 @@ var NhanVienService = () => {
     return promise;
   };
 
-  this.capNhatNhanVien = () => {
+  this.capNhatNhanVien = function (maNhanVien, nvCapNhat) {
     var promise = axios({
       url:
-        `http://svcy.myclass.vn/api/QuanLyNhanVienApi/CapNhatThongTinNhanVien?maNhanVien=` +
+        "http://svcy.myclass.vn/api/QuanLyNhanVienApi/CapNhatThongTinNhanVien?maNhanVien=" +
         maNhanVien,
       method: "PUT",
       data: nvCapNhat,
@@ -37,7 +37,7 @@ var NhanVienService = () => {
     return promise;
   };
 
-  this.chinhSua = () => {
+  this.chinhSua = function (maNhanVien) {
     var promise = axios({
       url:
         "http://svcy.myclass.vn/api/QuanLyNhanVienApi/LayThongTinNhanVien?maNhanVien=" +

@@ -1,6 +1,7 @@
 // Tạo ra 1 biến gồm 6 thuộc tính để lưu trữ thông tin
 var mangNhanVien = [];
 var validation = new Validation();
+var nvService = new NhanVienService();
 
 document.querySelector("#hienThi").onclick = function () {
   // alert()
@@ -10,7 +11,7 @@ document.querySelector("#hienThi").onclick = function () {
   nv.tenNhanVien = document.querySelector("#tenNhanVien").value;
   nv.heSoChucVu = document.querySelector("#chucVu").value;
   nv.luongCoBan = document.querySelector("#luongCoBan").value;
-  nv.gioLamTrongThang = document.querySelector("#soGioLamTrongThang").value;
+  nv.soGioLamTrongThang = document.querySelector("#soGioLamTrongThang").value;
   // console.log(nhanVien);
 
   // lấy innerHTML của option được chọn trong thẻ select
@@ -85,7 +86,51 @@ document.querySelector("#hienThi").onclick = function () {
   };
   // renderTable(mangNhanVien);
   luuLocalStorage();
-  renderTable(mangNhanVien);
+
+  // --------------------- chức năng thêm Nhân Viên API --------------------
+
+  var promise = nvService.themNhanVien(nv);
+  promise.then(function (result) {
+    console.log(result.data);
+    layDanhSachNhanVien();
+  });
+  promise.catch(function (error) {
+    layDanhSachNhanVien();
+    console.log(error.response.data);
+    alert('Có lỗi trong quá trình thêm nhân viên')
+  });
+};
+
+// // Viết phương thức lấy dữ liệu từ localstorage => khi người dùng vừa vào trang web
+// var layMangNhanVienStorage = function () {
+//   // kiểm tra dữ liệu có trong localstorage không
+//   if (localStorage.getItem("mangNhanVien")) {
+//     // lấy dữ liệu được lưu trong localstorage ra ngoài
+//     var sMangNhanVien = localStorage.getItem("mangNhanVien");
+//     // biến dữ liệu từ chuỗi chuyển về object javascript gán vào mangSinhVien
+//     mangNhanVien = JSON.parse(sMangNhanVien);
+//     // sau khi lấy dữ leeiuj ra gọi hàm tạo bảng
+//     renderTable(mangNhanVien);
+//   }
+// };
+
+// layMangNhanVienStorage();
+
+// ------------------------------ Xử lý API ----------------------------------
+
+var layDanhSachNhanVien = function () {
+  var promise = nvService.layDanhSachNhanVien(); // Gọi đến API để lấy data
+
+  //Xử lý cho trường hợp gọi thành công
+  promise.then(function (result) {
+    console.log(("Kết quả", result.data));
+    renderTable(result.data);
+  });
+
+  // Xử lý cho trường hợp thất bại
+  promise.catch(function (error) {
+    console.log(error);
+  });
 };
 
 var renderTable = function (arrNV) {
@@ -100,9 +145,8 @@ var renderTable = function (arrNV) {
       nv.chucVu,
       nv.heSoChucVu,
       nv.luongCoBan,
-      nv.gioLamTrongThang
+      nv.soGioLamTrongThang
     );
-
     // tạo ra 1 chuỗi + dồn vào nội dung <tr></tr>
     noiDungTable += `
     <tr>
@@ -116,36 +160,75 @@ var renderTable = function (arrNV) {
     <td><button class="btn btn-danger" onclick="xoaNhanVien('${
       nhanVien.maNhanVien
     }')">Xóa</button></td>
+    <td><button class="btn btn-primary" onclick="chinhSua('${
+      nhanVien.maNhanVien
+    }')">Chỉnh sửa</button></td>
     </tr>
     `;
   }
-  console.log(noiDungTable);
+  // console.log(noiDungTable);
   document.querySelector("#tableNhanVien").innerHTML = noiDungTable;
 };
 
-// cài đặt sự kiện cho button xoá
+layDanhSachNhanVien();
+
+// --------------cài đặt sự kiện cho button xoá------------------
 var xoaNhanVien = function (maNhanVien) {
-  // alert(mangNhanVien);
-  for (var i = mangNhanVien.length - 1; i >= 0; i--) {
-    var nv = mangNhanVien[i];
-    if (nv.maNhanVien === maNhanVien) {
-      mangNhanVien.splice(i, 1);
-    }
-  }
-  renderTable(mangNhanVien);
+  var promise = nvService.xoaNhanVienAPI(maNhanVien);
+  promise.then(function (result) {
+    console.log(result.data);
+    layDanhSachNhanVien();
+  });
+  promise.catch(function (error) {
+    console.log(error.response.data);
+  });
 };
 
-// Viết phương thức lấy dữ liệu từ localstorage => khi người dùng vừa vào trang web
-var layMangNhanVienStorage = function () {
-  // kiểm tra dữ liệu có trong localstorage không
-  if (localStorage.getItem("mangNhanVien")) {
-    // lấy dữ liệu được lưu trong localstorage ra ngoài
-    var sMangNhanVien = localStorage.getItem("mangNhanVien");
-    // biến dữ liệu từ chuỗi chuyển về object javascript gán vào mangSinhVien
-    mangNhanVien = JSON.parse(sMangNhanVien);
-    // sau khi lấy dữ leeiuj ra gọi hàm tạo bảng
-    renderTable(mangNhanVien);
-  }
+// ------------ Chức năng chỉnh sửa nhân viên --------------
+
+var chinhSua = function (maNhanVien) {
+  document.querySelector('#maNhanVien').disabled = true;
+  document.querySelector("#hienThi").disabled = true;
+  document.querySelector("#hienThi").className = 'btn btn-secondary mb-3'
+
+  var promise = nvService.chinhSua(maNhanVien);
+  promise.then(function (result) {
+    var nvCS = result.data;
+    document.querySelector("#maNhanVien").value = nvCS.maNhanVien;
+    document.querySelector("#tenNhanVien").value = nvCS.tenNhanVien;
+    document.querySelector("#chucVu").options = nvCS.chucVu;
+    document.querySelector("#luongCoBan").value = nvCS.luongCoBan;
+    document.querySelector("#soGioLamTrongThang").value
+      nvCS.soGioLamTrongThang;
+  });
+
+  promise.catch(function (error) {
+    console.log("lỗi chỉnh sửa: ", error.response.data);
+    alert('Có lỗi trong quá trình cập nhật')
+  });
 };
 
-layMangNhanVienStorage();
+document.querySelector("#btnLuuThongTin").onclick = function () {
+  var nvCapNhat = new NhanVien();
+  nvCapNhat.maNhanVien = document.querySelector("#maNhanVien").value;
+  nvCapNhat.tenNhanVien = document.querySelector("#tenNhanVien").value;
+  nvCapNhat.heSoChucVu = document.querySelector("#chucVu").value;
+
+  var arrChucVu = document.querySelector("#chucVu").options;
+  nvCapNhat.chucVu =
+    arrChucVu[document.querySelector("#chucVu").selectedIndex].innerHTML;
+
+  nvCapNhat.luongCoBan = document.querySelector("#luongCoBan").value;
+  nvCapNhat.soGioLamTrongThang = document.querySelector(
+    "#soGioLamTrongThang"
+  ).value;
+
+  var promise = nvService.capNhatNhanVien(nvCapNhat.maNhanVien, nvCapNhat);
+  promise.then(function (result) {
+    console.log(result.data);
+    layDanhSachNhanVien();
+  });
+  promise.catch(function (error) {
+    console.log(error.response.data);
+  });
+};

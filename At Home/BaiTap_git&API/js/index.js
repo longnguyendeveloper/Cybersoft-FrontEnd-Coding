@@ -1,30 +1,6 @@
 // Tạo ra 1 biến gồm 6 thuộc tính để lưu trữ thông tin
-var nvService = new NhanVienService();
 var mangNhanVien = [];
 var validation = new Validation();
-
-// ------------------------------ Xử lý API ----------------------------------
-
-var layDanhSachNhanVien = function () {
-
-  var promise = nvService.layDanhSachNhanVien(); // Gọi đến API để lấy data
-
-  //Xử lý cho trường hợp gọi thành công
-  promise.then(function (result) {
-      console.log(('Kết quả', result.data));
-      renderTable(result.data)
-  })
-
-  // Xử lý cho trường hợp thất bại
-  promise.catch(function (error) {
-      console.log(error);
-  })
-
-}
-
-layDanhSachNhanVien();
-
-
 
 document.querySelector("#hienThi").onclick = function () {
   // alert()
@@ -143,7 +119,7 @@ var renderTable = function (arrNV) {
     </tr>
     `;
   }
-  // console.log(noiDungTable);
+  console.log(noiDungTable);
   document.querySelector("#tableNhanVien").innerHTML = noiDungTable;
 };
 
@@ -167,10 +143,9 @@ var layMangNhanVienStorage = function () {
     var sMangNhanVien = localStorage.getItem("mangNhanVien");
     // biến dữ liệu từ chuỗi chuyển về object javascript gán vào mangSinhVien
     mangNhanVien = JSON.parse(sMangNhanVien);
-    // sau khi lấy dữ liệu ra gọi hàm tạo bảng
+    // sau khi lấy dữ leeiuj ra gọi hàm tạo bảng
     renderTable(mangNhanVien);
   }
 };
 
 layMangNhanVienStorage();
-

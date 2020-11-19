@@ -6,7 +6,6 @@ var svService = new SinhVienService();
 
 var layDanhSachSinhVienApi = function () {
   // Tạo ra 1 object chứa các thuộc tính backend yêu cầu (url, method)
-  
 
   var promise = svService.layDanhSachSinhVien(); //gọi đến bachend lấy data, (objectAjax) là hàm bất đồng bộ ---> ko chạy theo thứ tự, mà chạy theo những thằng load lên trước
 
@@ -80,7 +79,7 @@ document.querySelector("#btnXacNhan").onclick = function () {
 
   // dùng axios đưa dữ liệu về server thông qua api backend cung cấp
 
-  var promise = svService.themSinhVien(sv)
+  var promise = svService.themSinhVien(sv);
 
   // hàm thực thi khi gọi ajax thành công
   promise.then(function (result) {

@@ -3,6 +3,30 @@
 var mangNhanVien = [];
 var validation = new Validation();
 
+<<<<<<< Updated upstream
+=======
+// ------------------------------ Xử lý API ----------------------------------
+
+var layDanhSachNhanVien = function () {
+
+  var promise = nvService.layDanhSachNhanVien(); // Gọi đến API để lấy data
+
+  //Xử lý cho trường hợp gọi thành công
+  promise.then(function (result) {
+      console.log(('Kết quả', result.data));
+      renderTable(result.data)
+  })
+
+  // Xử lý cho trường hợp thất bại
+  promise.catch(function (error) {
+      console.log(error);
+  })
+
+}
+
+layDanhSachNhanVien();
+
+>>>>>>> Stashed changes
 document.querySelector("#hienThi").onclick = function () {
   // alert()
   var nv = new NhanVien();
